@@ -1,0 +1,84 @@
+CREATING A NEW CHARACTER
+
+SPECIAL are in the range 1..10
+Skill are in the range 1..100
+
+To create a new character, first start setting each SPECIAL stat with value 1, then allocate 35 points among them. Next, the player selects 1 trait from the list below:
+[LIST OF TRAITS]
+
+Then, calculate the following derived attributes:
+    * Carry Weigth (CW) = 150 + (Strength * 10)
+    * Health Points (HP) = 100 + (Endurance * 20) + ((Level - 1) * 5)
+    * Sequence = 1d10 + Agility
+
+The initial value for skills are derived from 
+    * Skill = 2 + (2 * Stat) + ⌈Luck / 2⌉
+
+[LEVEL UP] 
+
+On each level up, player can increase their skills to the following formula:
+    * Skill points = 10 + ⌈Intelligence / 2⌉
+
+Every three levels, players can choose a perk    
+
+
+[LIST OF PERKS]
+
+[GHOULIFICATION]
+
+COMBAT
+    Combat Basics
+        Combat happens in a turn structure, where each character has a number of actions expressed by
+            * Actions = ⌈Agility / 2⌉
+
+        Each action can be one of the following:
+            * Use an item
+            * Perform an attack
+            * Change or reload weapons
+            * Prepare to block an attack
+            * Run, hide or similar action
+        A player can spend an additional action to perform an Aimed Shot.
+
+        Hit = 1d100 < Skill for the weapon type
+
+        Damage for a weapon = Weapon's dice damage * (50 + Skill) / 100¹ - Target's DT
+        ¹ For ease, round it up
+        
+        Melee Damage = Weapon's dice damage + ⌈Strength / 2⌉ - Target's DT 
+
+        Unarmed Damage = ⌈Unarmed skill / 20 + 0.5⌉ - Target's DT
+
+        Knockdown - If a melee attack causes damage over 30% of the targets health, defending player must run a saving throw of 1d10 against their endurance
+
+        Crippling damage - [HOW CRIPPLE WORKS]
+
+        Sneaking damage - If the player is sneaking and undetected, multiply the final damage of the attack by 1d6 + 1
+
+        Aimed Shot - For the cost of an extra action, the player can aim a shot to a specific part of the target's body
+        
+        Spread - Multiplication of dice values is done to simulate the spread of automatic weapons like machine guns and miniguns
+        
+CHEMS
+
+Addiction - Addiction is cumulative. Every time an addictive item is consumed, the player adds to the cumulative percentage already accumulated, then rolls 1d100 against the probability to get addicted to the used substance. If the value is lower than current addiction probability, the player is now addicted. Addiction probabilities reduce 10% for each night of good rest.
+
+SOCIAL
+
+Reputations - In interacting with the different factions, players will develop a reputation depending on how they act, and NPCs members of that faction should treat characters according to it. 
+
+    
+SNEAK
+
+If no one is looking for the player character, they run a test against sneak.
+If you're in an (N)PC line of sight, you need a critical success to be able to remain hidden. Stealth Boys guarantee success in this, except in the case of critical failure
+
+
+POWER ARMOR
+
+
+
+[Intimidate?]
+
+[SELLING AND BUYING]
+
+[FLIRTATIOUS ANSWERS]
