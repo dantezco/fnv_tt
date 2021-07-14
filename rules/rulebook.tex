@@ -24,16 +24,17 @@
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 %%% PACKAGES
+\usepackage{pdflscape}
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
 \usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 \usepackage{longtable}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames,table]{xcolor}
 \usepackage[pdftex,
             pdfauthor={Dante Moreira Zaupa},
-            pdftitle={Fallout New Vegas Tabletop RPG Rules},
+            pdftitle={Fallout New Vegas Tabletop RPG Rules, v0.3},
             pdfsubject={These are the rules},
             pdfkeywords={Rules},
             pdfproducer={Latex with hyperref and textpos},
@@ -43,14 +44,15 @@
 	allcolors=Sepia,
 }
 \usepackage{epigraph}
+\usepackage{makecell}
 % These packages are all incorporated in the memoir class to one degree or another...
 
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
 \renewcommand{\headrulewidth}{0pt} % customise the layout...
-\lhead{}\chead{}\rhead{}
-\lfoot{}\cfoot{\thepage}\rfoot{}
+\lhead{}\chead{\textit{Fallout New Vegas Tabletop RPG Rules}}\rhead{\textit{\thepage}}
+\lfoot{}\cfoot{}\rfoot{}
 
 %%% SECTION TITLE APPEARANCE
 \usepackage{sectsty}
@@ -63,11 +65,23 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
+%%%% TABLE ALTERNATING COLORS
+\definecolor{Mojave}{RGB}{255,218,174}
+% alternate rowcolors for all tables
+\let\oldtabular\tabular
+\let\endoldtabular\endtabular
+\renewenvironment{tabular}{\rowcolors{2}{white}{Mojave}\oldtabular}{\endoldtabular}
+
+% alternate rowcolors for all long-tables
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}{\rowcolors{2}{white}{Mojave}\oldlongtable} {
+\endoldlongtable}
+
+
 %%% END Article customizations
 
-%%% The "real" document content comes below...
-
-\title{Fallout New Vegas Tabletop RPG Rules}
+\title{Fallout New Vegas Tabletop RPG Rules\\v0.2}
 \author{Dante Moreira Zaupa}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -81,22 +95,14 @@
 \newpage
 \tableofcontents
 \newpage
-
-\section{TODO}
-\begin{itemize}
-\item DAMAGES SUFFER DISREPAIR WHEN SKILL TEST FAIL, AND NEED TO BE REPAIRED
-\item specify Ranger
-\item adicionar vaults
-\item adicionar mapas
-\item Add traits? -- GHOULIFIED TRAIT
-\item complete types of FEV strainss
-\item review becoming glowing one formula
-\item remove casino descriptions from factions/strip subfactions
-\item add base equipment for each class/race
-\item global replace SPECIAL with S.P.E.C.I.A.L. 
-\item Add sample characters for each faction
-\end{itemize}
+\listoftables
 \newpage
+
+% \section{TODO}
+% \begin{itemize}
+
+% \end{itemize}
+% \newpage
 
 \section{INTRODUCTION}
 
@@ -130,22 +136,22 @@ The Mojave is not a safe place, that much must be clear to you. And how are you 
 
 \subsection{You are S.P.E.C.I.A.L.}
 
-You are S.P.E.C.I.A.L., as in, you are what your stats say you are. These 7 characteristics are the base of what you are, so the least you could do is know what they mean, right? And don't forget, these are scales of 1 to 10. You start with 1 in each one, and get 35 points to spread among them as makes sense to the \textit{you} you are trying to create. You may have more due to bonus, but not by assigning them from your initial point pool.
+You are S.P.E.C.I.A.L., as in, you are what your stats say you are. These 7 characteristics are the base of what you are, so the least you could do is know what they mean, right? And don't forget, these are scales of 1 to 10. You start with 5 in each one, and get 10 points to spread among them as makes sense to the \textit{you} you are trying to create, in addition to moving points from one stat to another (remember, the minimum value is one, and the maximum value is 10). 
 
 \begin{itemize}
-\item \textbf{S}trength: do you want to carry a lot of weapons? Lift heavy rocks? Maybe your dream is to double-wield miniguns(you will likely not be able to do this, actually). All these, and more, are possibilities granted to you by investing in Strength. On the other hand, if you neglect it, you might not even be strong enough to properly wield your weapon
-
-\item \textbf{P}erception: either by seeing what's beyond sight, identifying who's around by their footsteps, smelling like an old hound dog (and I mean detecting scent, please take a shower once in a while), don't forget to invest in Perception. After all, while surprise mauling by deathclaw may not be one of the leading causes of death on the Mojave, there is no reason to risk it, either
-
-\item \textbf{E}ndurance: so you want to be tougher than the toughies? Strength is good, but endurance is better. You may hit like a brick, but it's worthless if you can't take a punch, or even fight properly. You are not a supermutant (or are you?), and even if you were, you should know what you're doing
-
-\item \textbf{C}harisma: I was going to make a joke at your expense, but nah, you convinced me not to, you sweet talker you. Hey, maybe you deserve a discount on these stimpaks, eh? Just because you're so nice. You're lucky to be such a character, otherwise I might not even be talking to you
-
-\item \textbf{I}ntelligence: so now you want to be smarter than the smarties? A regular wise guy, mister know-it-all, understand electronics, big words and figures out computers like they ain't no thing? Keep it up. You don't want to be a schmuck that can't figure his way out of his pants, dig?
-
-\item \textbf{A}gility: you want to be fast, kid, if you want to escape deathclaws. Also, being able to climb the flimsiest ruins in the Mojave also helps a lot. As they say, if you can't be strong, at least be fast
-
-\item \textbf{L}uck: keep in mind, you're in Vegas, so it won't hurt you to have a little luck. It may just save you in everything you do, except if what you're doing is winning too much on the cassinos. \textit{That} tends to not be very healthy
+	\item \textbf{Strength:} do you want to carry a lot of weapons? Lift heavy rocks? Maybe your dream is to double-wield miniguns(you will likely not be able to do this, actually). All these, and more, are possibilities granted to you by investing in Strength. On the other hand, if you neglect it, you might not even be strong enough to properly wield your weapon
+	
+	\item \textbf{Perception:} either by seeing what's beyond sight, identifying who's around by their footsteps, smelling like an old hound dog (and I mean detecting scent, please take a shower once in a while), don't forget to invest in Perception. After all, while surprise mauling by deathclaw may not be one of the leading causes of death on the Mojave, there is no reason to risk it, either
+	
+	\item \textbf{Endurance:} so you want to be tougher than the toughies? Strength is good, but endurance is better. You may hit like a brick, but it's worthless if you can't take a punch, or even fight properly. You are not a supermutant (or are you?), and even if you were, you should know what you're doing
+	
+	\item \textbf{Charisma:} I was going to make a joke at your expense, but nah, you convinced me not to, you sweet talker you. Hey, maybe you deserve a discount on these stimpaks, eh? Just because you're so nice. You're lucky to be such a character, otherwise I might not even be talking to you
+	
+	\item \textbf{Intelligence:} so now you want to be smarter than the smarties? A regular wise guy, mister know-it-all, understand electronics, big words and figures out computers like they ain't no thing? Keep it up. You don't want to be a schmuck that can't figure his way out of his pants, dig?
+	
+	\item \textbf{Agility:} you want to be fast, kid, if you want to escape deathclaws. Also, being able to climb the flimsiest ruins in the Mojave also helps a lot. As they say, if you can't be strong, at least be fast
+	
+	\item \textbf{Luck:} keep in mind, you're in Vegas, so it won't hurt you to have a little luck. It may just save you in everything you do, except if what you're doing is winning too much on the cassinos. \textit{That} tends to not be very healthy
 \end{itemize}
 
 \subsection{Skills}
@@ -153,31 +159,31 @@ You are S.P.E.C.I.A.L., as in, you are what your stats say you are. These 7 char
 You are your stats, but you are also your skills. Do you barter? Blow stuff up? Beat people up? There are a lot of things you can do, to different levels of proeficiency. Keep in mind, skills go from 1 to 100. And, like S.P.E.C.I.A.L. stats, it can be increased by bonuses, over the 100 limit.
 
 \begin{itemize}
-\item \textbf{Barter (C):} be it caps, NCR money or other, less tangible currency, that's your game. Having a high barter will help you negotiate the best price for a mini-nuke, or explain to someone why leaving you alone is the most profitable solution. Provided that that someone is not a deathclaw
-
-\item \textbf{Energy Weapons (P):} guns that go ``pew pew'' or that turn people into goo are your jam. Unlike their ``bang bang'' counterparts, they are more than point and fire, one needs to know how to regulate them properly, and keep all parts working properly
-
-\item \textbf{Explosives (P):} you like it when things go boom, and you can make them go \textit{really} boom, while being safe from all the ill efects of all those booms
-
-\item \textbf{Guns (A):} some people like lasers, some people like explosions, but you are the one who knows that a piece of metal through the head is enough to stop the toughest of foes. Provided, that is, that you are using the proper gun and ammo. And you are always using proper gun and ammo
-
-\item \textbf{Lockpick (P):} you view keys are more of a philosophical choice, instead of a practical need. As long as you have a bobby pin, no lock wil ever deter you. Of course, you could use a gun, or explosives, but why would you let people know you're coming?
-
-\item \textbf{Medicine (I):} maybe you like helping people, or maybe you just needed to patch yourself after the latest kerfuffle, but you know bones and cuts, and how to mend them, even and especially using chems
-
-\item \textbf{Melee Weapons (S):} guns are for weaklings. Your pipe, knife, sword, spear, or even a rock will take you to victory, and you will never run out of ammo for them. Just don't get cocky, kid
-
-\item \textbf{Repair (I):} you can fix your guns, you can fix your armor, you can fix your friend's machine. The only thing you can fix is the world around you. Or maybe you can?
-
-\item \textbf{Science (I):} where other people see mysteries, you see mechanisms that you can manipulate. You know how to create, change and destroy chems, robots, computers
-
-\item \textbf{Sneak (A):} wait, am I here alone explaining stuff to the air like a looney? Where are you? Hope you're not thinking of backstabb... 
-
-\item \textbf{Speech (C):} unlike me, you can talk anyone into almost anything. Wait, what did you say? Oh sorry, I agree, you can talk \textit{anyone} into \textit{anything}
-
-\item \textbf{Survival (E):} you are the person who makes medicine from plants, fire from two rocks and some twigs, and you are one of the few people who can actually turn radscorpion poison glands and a deathclaw egg in a meal fit for a king. All that in a cave that you made by yourself
-
-\item \textbf{Unarmed (E):} you don't need any weapons, since you \textit{are} the weapon. You can say that with confidence, since no one that laughs at your corniness will regret it instantly
+	\item \textbf{Barter (C):} be it caps, NCR money or other, less tangible currency, that's your game. Having a high barter will help you negotiate the best price for a mini-nuke, or explain to someone why leaving you alone is the most profitable solution. Provided that that someone is not a deathclaw
+	
+	\item \textbf{Energy Weapons (P):} guns that go ``pew pew'' or that turn people into goo are your jam. Unlike their ``bang bang'' counterparts, they are more than point and fire, one needs to know how to regulate them properly, and keep all parts working properly
+	
+	\item \textbf{Explosives (P):} you like it when things go boom, and you can make them go \textit{really} boom, while being safe from all the ill efects of all those booms
+	
+	\item \textbf{Guns (A):} some people like lasers, some people like explosions, but you are the one who knows that a piece of metal through the head is enough to stop the toughest of foes. Provided, that is, that you are using the proper gun and ammo. And you are always using proper gun and ammo
+	
+	\item \textbf{Lockpick (P):} you view keys are more of a philosophical choice, instead of a practical need. As long as you have a bobby pin, no lock wil ever deter you. Of course, you could use a gun, or explosives, but why would you let people know you're coming?
+	
+	\item \textbf{Medicine (I):} maybe you like helping people, or maybe you just needed to patch yourself after the latest kerfuffle, but you know bones and cuts, and how to mend them, even and especially using chems
+	
+	\item \textbf{Melee Weapons (S):} guns are for weaklings. Your pipe, knife, sword, spear, or even a rock will take you to victory, and you will never run out of ammo for them. Just don't get cocky, kid
+	
+	\item \textbf{Repair (I):} you can fix your guns, you can fix your armor, you can fix your friend's machine. The only thing you can fix is the world around you. Or maybe you can?
+	
+	\item \textbf{Science (I):} where other people see mysteries, you see mechanisms that you can manipulate. You know how to create, change and destroy chems, robots, computers
+	
+	\item \textbf{Sneak (A):} wait, am I here alone explaining stuff to the air like a looney? Where are you? Hope you're not thinking of backstabb... 
+	
+	\item \textbf{Speech (C):} unlike me, you can talk anyone into almost anything. Wait, what did you say? Oh sorry, I agree, you can talk \textit{anyone} into \textit{anything}
+	
+	\item \textbf{Survival (E):} you are the person who makes medicine from plants, fire from two rocks and some twigs, and you are one of the few people who can actually turn radscorpion poison glands and a deathclaw egg in a meal fit for a king. All that in a cave that you made by yourself
+	
+	\item \textbf{Unarmed (E):} you don't need any weapons, since you \textit{are} the weapon. You can say that with confidence, since no one that laughs at your corniness will regret it instantly
 
 \end{itemize}
 
@@ -188,15 +194,25 @@ Humans are the most common kind of people you will meet on your voyages, but not
 \subsubsection{Average humans} 
 
 You are the default race in New Vegas, found everywhere in most major cities and settlements. There is not anything notable about you, except your belief that Humans are better than ghouls, though you might tolerate them if you stand to gain something by their presence. Supermutants, on the other hand, are instinctively scary to you. Humans usually call ghouls ``zombies'', and there is no slur for supermutant. By default, humans don't get any alterations, but your specific background might change you. There are several variations of humans, according to how and where they were raised:
+
 \begin{itemize}
-\item \textbf{Vault Dwellers:} as the name implies, you are a human raised in a Vaults, descendant of people who went into Vaults when the bombs fell. Compared to the rest of the Mojave, you tend to have odd customs. A dead giveaway of your origins is the Pip Boy in your arm, though some wastelanders may have acquired Pip Boys from dead Vault Dwellers. Due to their more sheltered lives, Vault Dwellers in general get -1 Endurance, -1 Agility, +1 Perception and +2 Intelligence, though their specific vault background can change these or other stats, depending on the type of environment in which they grew up 
-\item \textbf{Raider:} as a raider, you come from a culture that overvalues physical strength over intellectual prowess, a hedonistic life that does not accept feelings or dialogue. ``Might before right'' could be your motto. You get +1 Strenght and +2 Endurance, +20 Survival, +20 Guns, but their way of life costs them -1 Intelligence, -3 Charisma, -30 Barter, -20 Energy Weapons
-\item \textbf{Strip Citizen:} your life on the Strip could not be considered easy, but it's easier than on other places. The casinos are your second home, and prostitutes are basically the only interesting girls you meet. This environment has taught you to solve your problems using either your gun, your mouth, or your dice. You get +2 Charisma, +1 Luck, +20 Speech, +10 Guns, but the cozy life leaves you with -1 Endurance and -1 Agility, and -20 Survival
-\item \textbf{Freesider/Westsider:} unlike your counterparts from the Strip, you have had to learn how to handle themselves with little resources, getting +1 Strength, +3 Endurance, +20 Survival, +20 Melee, +30 Unarmed, +15 Repair. On the other hand, a hard knock life left you with -1 Strength, -1 Charisma, -3 Luck, and -20 Energy Weapons
-\item \textbf{NCR Soldier:} life in the army has been good to you, yes siree. Discipline and training, and since your deployment on New Vegas, quite some hours piloting the slot machines and blackjack tables. You get +2 Endurance, +10 Explosives, +20 Guns, +5 Medicine, but it costs you in -1 Charisma, -10 in Energy Weapons. Also, serving in New Vegas means a lot of time spent in the casinos, which gives you +1 Luck
-\item \textbf{Follower of the Apocalypse:} from birth, you have lived around a camp and helped take care of people in need. You have used chems as medicine, sutured open wounds, and did a lot of negotiation to get the resources you need. You get +2 Intelligence, +3 Charisma, +40 Medicine, +20 Science. However, a life dedicated to peace means you get -1 Strength, -10 Guns, -10 Explosives, -20 Energy Weapons, -30 Melee and -10 Unarmed
-\item \textbf{Brotherhood of Steel:} as a Brother (or Sister), you were born with electricity coursing through your veins, being trained since a youngling into cutting-edge technology. Thus, you get +35 Energy Weapons, +20 Science, +10 Repairs and +2 to Intelligence. However, the isolationist and supremacist culture that surrounded you from birth took its toll, and you get -2 Charisma, -20 Speech, and since you were always taught to ignore them, -10 to Guns, -30 to Sneak and -20 to Survival. As a bonus, you are able to wear a Power Armor without training, provided your Intelligence is 4 or more
-\item \textbf{Boomer:} forget about the Brotherhood of Steel, Boomers are the Mojave's premiere isolationist, chauvinist group. Descendants of the inhabitants of Vault 34, where all problems were solved at gunpoint, Boomers despise all people who they call ``savages'', with some of them dreaming of cleansing the Mojave with a bomber plane called ``Lady in the Lake''. Thus, you get +40 Explosives, +20 Guns, +20 Repair and +20 Science, but your antisocial tendencies will be obvious, with -4 Charisma, -30 Speech, and -20 Barter
+	\item \textbf{Vault Dwellers:} as the name implies, you are a human raised in a Vaults, descendant of people who went into Vaults when the bombs fell. Compared to the rest of the Mojave, you tend to have odd customs. A dead giveaway of your origins is the Pip Boy in your arm, though some wastelanders may have acquired Pip Boys from dead Vault Dwellers. Due to their more sheltered lives, Vault Dwellers in general have worse physical attributes, with intellectual advantages that come with living a life with better access to technology and education, though their specific vault background can change these or other stats, depending on the type of environment in which they grew up 
+	
+	\item \textbf{Raider:} as a raider, you come from a culture that overvalues physical strength over intellectual prowess, a hedonistic life that does not accept feelings or dialogue. ``Might before right'' could be your motto, after the years of scraps and gunfight, not to mention survival on the desert. On the other hand, the average raider tend to have precious less in terms of social and intellectual skills
+	
+	\item \textbf{Strip Citizen:} your life on the Strip could not be considered easy, but it's easier than on other places. The casinos are your second home, and prostitutes are basically the only interesting girls you meet. This environment has taught you to solve your problems using either your gun, your mouth, or your dice, though not so much with your muscle
+	
+	\item \textbf{Freesider/Westsider:} unlike your counterparts from the Strip, you have had to learn how to survive with little resources, which made you scrappier, a real fighter, but also made you harder, less trusting and less inclined to socialize with people who had better luck in life
+	
+	\item \textbf{NCR Soldier:} life in the army has been good to you, yes siree. Discipline and training have made you quite the combatant, armed and unarmed. Since your deployment on New Vegas, quite some hours piloting the slot machines and blackjack tables, and your time in the casinos has somewhat increased your luck. The criminal element is not exactly friendly to your presence, and unfortunately, ``criminal element'' is an apt description for a lot of people in the wastes
+	
+	\item \textbf{NCR Ranger:} the best of the best of the best, \textit{sir!} Your elite training makes you a living weapon, capable of dealing with large amounts of people, Nightstalkers, and some say a Veteran Ranger could even kill a Deathclaw in single-handed combat... think you could do that? However, between the your fearful reputation and your hard training, your social skills are not aas developed, and the ``criminal element'' is even less amenable to your presence
+	
+	\item \textbf{Follower of the Apocalypse:} from birth, you have lived around a camp and helped take care of people in need. You have used chems as medicine, sutured open wounds, and did a lot of negotiation to get the resources you need. Living mostly a pacifist's life has made you less apt in using violence, though
+	
+	\item \textbf{Brotherhood of Steel:} as a Brother (or Sister), you were born with electricity coursing through your veins, being trained since a youngling into combat and cutting-edge technology. However, the isolationist and supremacist culture that surrounded you from birth took its toll, and your chauvinistic tendencies towards outsiders tend to make you \textit{persona non grata} more often than not. As a bonus, you are able to wear a Power Armor without training, provided your Intelligence is 4 or more
+	
+	\item \textbf{Boomer:} forget about the Brotherhood of Steel, Boomers are the Mojave's greatest isolationist, chauvinist group. They are descendant of the former inhabitants of Vault 34, where all problems were solved at gunpoint. Boomers despise essentially everyone who was not from their vault, calling them ``savages''. Most of them dreamt of cleansing the Mojave from the savages, but after the Courier estabilished first contact and friendship with them, they became a bit more open, mostly developing trade relations, though once in a blue moon they would welcome a savage to live among them
 \end{itemize}
 
 \subsubsection{Ghouls}
@@ -205,23 +221,24 @@ You look like you were hit with a flamethrower, ghouls are best described by the
 
 Though a lot of you remain essentially human, some ghouls become feral, losing all capacity to communicate or develop rational thinking, becoming little more than zombies from old movies. After some time being mistreated by them, you are likely to develop some amount of prejudice against the ``smoothskins''. Most of your ghoul friends have, at least.
 
-On the physical side, part of the damage affected your vocal cords, meaning that you developed a raspy voice. But now you don't need to eat or drink, though you can do it if you can. You regenerate health in radioactive environments, although too much, too fast, may turn you into a Glowing One, and/or even turn you feral. You get +30 Survival, -1 to Endurance, -2 to Charisma, -1 to Agility, -20 to Barter, -20 to Speech
+On the physical side, part of the damage affected your vocal cords, meaning that you developed a raspy voice. But now you don't need to eat or drink, though you can do it if you can. You regenerate health in radioactive environments, although too much, too fast, may turn you into a Glowing One, and/or even turn you feral. 
+
 \begin{itemize}
-\item \textbf{Feral Ghoul:} As a feral ghoul, you will lose all your social skills: Intelligence, Charisma, Barter and Speech become 1. You don't think, you don't have goals, and you live for the next meal, forever or until someone puts you out of your misery. You're done, kid. Hope it was nice while it lasted.
-\item \textbf{Glowing One:} it's hard to reach this level of ghoulification without becoming feral, but it can happen. As a Glowing One, you can store radiation and release it as an energy burst (this action costs 2 Action Points) that restores your health, as well as the health of other ghouls in your vicinity. Sometimes, you might even resurrect a fallen ghoul this way. But you can kiss goodbye your chances of walking peacefully among humans, even though some might deal with you. The radiation makes you stronger than normal, and you get +2 Strength
+	\item \textbf{Feral Ghoul:} As a feral ghoul, you will lose all your social skills, becoming little more than an animal, or perhaps little less. You don't think, you don't have goals, and you live for the next meal, forever or until someone puts you out of your misery
+	\item \textbf{Glowing One:} it's hard to reach this level of ghoulification without becoming feral, but it can happen. As a Glowing One, exposure to radiation makes you stronger, and you can store radiation and release it as an energy explosion (this action costs 2 Action Points) that restores your health, as well as the health of other ghouls in your vicinity. Sometimes, you might even resurrect a fallen ghoul this way. But you can kiss goodbye your chances of walking peacefully among humans, even though some might deal with you, provided you are especially charming
 \end{itemize}
 
 \subsubsection{Supermutants} 
 
 Large, green, strong, ugly and not very smart, let's hope you are not sensitive about this and, if you are, that nobody says that to your face. 
 
-Supermutants are humans that were exposed to the Forced Evolution Virus (F.E.V.), and used to serve the Master, a megalomaniacal, superintelligent mutant (a different sort of mutant), and after his demise, became mostly directionless. Because supermutants are sterile, the usual way to increase their numbers is by capturing humans and exposing them to the F.E.V. (only humans, as ghouls are not affected). 
+Supermutants are humans that were exposed to the Forced Evolution Virus (F.E.V.), and used to serve the Master, a megalomaniacal, superintelligent mutant (that suffered a different sort of mutation), and after his demise, became mostly directionless. Because supermutants are sterile, the usual way to increase their numbers is by capturing humans and exposing them to the F.E.V. (only humans, as ghouls are not affected). 
 
-You get +3 Strength, +4 Endurance, +1 Perception, +2 Intelligence, +2 Agility and -5 to Charisma. Additionally, you get +5 to total strength, being able to reach 15, but you start with 25 S.P.E.C.I.A.L. points for your character, and +10 points to Damage Threshold, reflecting your superior durability. Due to their large hands, you will not be able to use most smaller weaponry, in either it's laser or gunpowder varieties, and forget about power armor, too, as they don't come in extra larger sizes. Supermutants normally ignore ghouls, though sometimes they might use them as slave labor. There are two possible variations to supermutants:
+Your mutation makes you stronger, faster, and immune to radiation and diseases, but also very much less intelligent and sociable. Your S.P.E.C.I.A.L. totals also change, you get +5 to total Strength, being able to reach 15, and +10 points to Damage Threshold, but you start with 5 S.P.E.C.I.A.L. points for your character. Due to their large hands, you will not be able to use most smaller weaponry, in either it's laser or gunpowder varieties, and forget about power armor, too, as they don't come in extra larger sizes. Supermutants normally ignore ghouls, though sometimes they might use them as slave labor. There are two possible variations to supermutants:
 
 \begin{itemize}
-\item \textbf{Nightkins:} you are the supermutant other supermutants aspire to be. As a nightkin, you are smarter, stronger and more resilient, but that makes them more arrogant. Thus, you get +5 to total strength, being able to reach 15, +4 Strength, +4 Endurance, +1 Perception, +2 Intelligence, +3 Agility and -6 to Charisma. Additionally, you get +6 to total strength, being able to reach 16, but you start with 25 S.P.E.C.I.A.L. points for your character, and +15 points to Damage Threshold, reflecting your superior durability.. In terms of appearanche, your overindulgence of Stealth Boys caused your skin to become more of a purple-ish skin tone, and you tend to be severely paranoid, going into full on schizophrenia in your worst moments
-\item \textbf{Behemoths:} you much larger, stronger, dumber and more savage than regular supermutants. Though not completely feral, behemoths are not well fitted to do much besides smashing, though they can also be very caring with someone or something for which they have affection. You get +10 to total strength, being able to reach 20, +6 Strength, +6 Endurance, +3 Perception, +2 Agility, -6 Intelligence, -6 Charisma, +25 DT and your hands are too large to use most weapons, except for large blunt equipment and debris.
+	\item \textbf{Nightkins:} you are the supermutant other supermutants aspire to be. As a nightkin, you are smarter, stronger and more resilient, but that makes you more arrogant. You get +6 to total strength, being able to reach 16, but you start with 7 S.P.E.C.I.A.L. points for your character, and +15 points to Damage Threshold, reflecting your superior durability.. In terms of appearanche, your overindulgence of Stealth Boys caused your skin to become more of a purple-ish skin tone, and you tend to be severely paranoid, going into full on schizophrenia in your worst moments
+	\item \textbf{Behemoths:} you much larger, stronger, dumber and more savage than regular supermutants. Though not completely feral, behemoths are not well fitted to do much besides smashing, though they can also be very caring with someone or something for which they have affection. Your hands are too large to use most weapons, except for large blunt equipment and debris.
 \end{itemize}
 
 \subsection{Races summary}
@@ -230,48 +247,53 @@ It is important to note that there are more possibilities regarding backgrounds.
 
 \begin{longtable}{|p{4cm}|p{5cm}|p{5cm}|}
 \hline
-\bfseries Race / Class & \bfseries Upside & \bfseries Downside \\
+	\bfseries Race / Class & \bfseries Upside & \bfseries Downside \\
 \hline
 \endhead
 \bfseries Human & None & None \\
-Vault Dweller & +1 PE, +2 IN & -1 EN, -1 AG  \\
-Raider & +1 ST, +2 EN, +20 Survival, +20 Guns & -1 IN, -3 CH, -30 Barter, -20 Energy Weapons \\
-Strip Citizen & +2 CH, +1 LU, +20 Speech, +10 Guns & -1 EN, -1 AG, -20 Survival \\ 
-Freesider / Westsider & +1 ST, +2 EN, +20 Survival & -1 CH, -2 LU \\
-NCR Soldier & +2 EN, +1 LU, +10 Explosives, +20 Guns, +5 Medicine & -1 CH, -10 Energy Weapons \\
-Follower of the Apocalypse & +2 IN, +3 CH, +40 Medicine, +20 Science & -1 ST, -10 Guns, -10 Explosives, -20 Energy Weapons, -30 Melee Weapons, -10 Unarmed \\
-Brotherhood of Steel & +2 IN, +35 Energy Weapons, +20 Science, +10 Repairs & -2 CH, -20 Speech, -10 Guns, -30 Sneak, -20 Survival \\
-Boomer & +40 Explosives, +20 Guns, +20 Repair, +20 Science & -4 CH, -30 Speech, -20 Barter \\
-\bfseries Ghoul & +30 Survival, Health Regeneration under Radiation & -1 EN, -2 CH, -1 AG, -20 Barter, -20 Speech \\
-Glowing One & +2 ST, +2 EN, +30 Survival, Health Regeneration under Radiation, Radiation Burst & -1 EN, -2 CH, -1 AG, -20 Barter, -20 Speech \\
-\bfseries Supermutant & +3 ST, +3 EN, +1 PE, +2 IN, +2 AG, Radiation Immunity, +5 Total Strength, +10 DT & -5 CH, 25 starting S.P.E.C.I.A.L. points at the start, Can only use large weapons and can't use power armor \\
-Nightkin & +4 ST, +1 PE, +4 EN, +2 IN, +3 AG, Radiation Immunity, +6 Total Strength, +15 DT & -6 CH 25 starting S.P.E.C.I.A.L. points at the start, Can only use large weapons and can't use power armor \\
-Behemoth & +6 ST, +6 EN, Radiation Immunity, +10 Total Strength & -6 IN, -7 CH, 25 starting S.P.E.C.I.A.L. points at the start, Can only use special blunt weapons \\
+	Vault Dweller & +1 PE, +2 IN & -1 EN, -1 AG  \\
+	Raider & +1 ST, +2 EN, +20 Survival, +20 Guns & -1 IN, -3 CH, -30 Barter, -20 Energy Weapons \\
+	Strip Citizen & +2 CH, +1 LU, +20 Speech, +10 Guns & -1 EN, -1 AG, -20 Survival \\ 
+	Freesider / Westsider & +1 ST, +2 EN, +20 Survival & -1 CH, -2 LU \\
+	NCR Soldier & +2 EN, +1 LU, +10 Explosives, +20 Guns, +5 Medicine & -1 CH, -10 Energy Weapons \\
+	NCR Ranger & +2 ST, +1 PE, +2 EN, +1 AG, +10 Energy Weapons, +15 Explosives, +20 Guns, +10 Melee Weapons, +20 Sneak, +20 Survival, +15 Unarmed & -3 CH, -20 Barter, -30 Speech \\
+	Follower of the Apocalypse & +2 IN, +3 CH, +40 Medicine, +20 Science & -1 ST, -10 Guns, -10 Explosives, -20 Energy Weapons, -30 Melee Weapons, -10 Unarmed \\
+	Brotherhood of Steel & +2 IN, +35 Energy Weapons, +20 Science, +10 Repairs & -2 CH, -20 Speech, -10 Guns, -30 Sneak, -20 Survival \\
+	Boomer & +40 Explosives, +30 Guns, +20 Energy Weapons, +20 Repair, +20 Science & -4 CH, -30 Speech, -20 Barter \\
+	\bfseries Ghoul & +30 Survival, Health Regeneration under Radiation & -1 EN, -2 CH, -1 AG, -20 Barter, -20 Speech \\
+	Glowing One & +2 ST, +2 EN, +30 Survival, Health Regeneration under Radiation, Radiation Burst & -1 EN, -2 CH, -1 AG, -20 Barter, -20 Speech \\
+	\bfseries Supermutant & +3 ST, +3 EN, +2 AG, Radiation Immunity, +5 Total Strength, +10 DT & -5 CH, -2 IN, 5 starting S.P.E.C.I.A.L. points at the start, Can only use large weapons and can't use power armor \\
+	Nightkin & +4 ST, +4 EN, +3 AG, Radiation Immunity, +6 Total Strength, +15 DT & -5 CH, 7 starting S.P.E.C.I.A.L. points at the start, Can only use large weapons and can't use power armor \\
+	Behemoth & +6 ST, +5 EN, Radiation Immunity, +10 Total Strength & -5 CH, -5 IN, 5 starting S.P.E.C.I.A.L. points at the start, Can only use special blunt weapons \\
 \hline
-\end{longtable}{\begin{center}Imagine all the possibilities. Then, imagine all the possibilities that are not here.\end{center}}
+\hiderowcolors
+\caption{Imagine all the possibilities. Then, imagine all the possibilities that are not here.}
+\end{longtable}
 
 \subsection{Putting Everything Together}
 
 So, that's half the battle, kid, because now you know. But let's put it together in an easy to-do list, to make things easy.
 
 \begin{enumerate}
-\item The easiest way to start a character is to start with a concept. Are you human? Ghoul? Supermutant? Think about those things, they will guide you in your next steps
-\item Choose a race and apply buffs and debuffs
-\item Set all your S.P.E.C.I.A.L. stats to 1, then allocate 35 points among them to start, unless you are a supermutant, who gets only 25 points
-\item Select one trait from the list in Appendix \ref{app:traits}, then apply buffs and debuffs as appropriate. 
-\item Calculate stats derived from the following formulas:
-\begin{center}
-Carry Weigth (CW) = $150 + (Strength * 10)$ \\
-Health Points (HP) = $100 + (Endurance * 20) + ((Level - 1) * 5)$ \\
-Sequence = $1d10 + Agility$ \\
-Actions per turn = $ \lceil Agility / 2 \rceil $
-\end{center}
-\item Tag 3 skills, and no more than 3. 4 will not be chosen, neither will 2, except in the case that it's leading to 3. Forget about 5! Once 3 skills are tagged, the third being the last
-\item For each Skill, use the formula below, then add 15 if it is a tagged skill
-\begin{center}
-Skill = $2 + (2 * S.P.E.C.I.A.L.) + \lceil Luck / 2 \rceil$
-\end{center}
+	\item The easiest way to start a character is to start with a concept. Are you human? Ghoul? Supermutant? Think about those things, they will guide you in your next steps
+	\item Choose a race and apply buffs and debuffs
+	\item Set all your S.P.E.C.I.A.L. stats to 5, then move points from one stat to another and allocate your initial extra points
+	\item Select one trait from the list in Appendix \ref{app:traits}, then apply buffs and debuffs as appropriate. 
+	\item Calculate stats derived from the following formulas:
+	
+		\begin{center}
+			Carry Weigth (CW) = $150 + (Strength * 10)$ \\
+			Health Points (HP) = $100 + (Endurance * 20) + ((Level - 1) * 5)$ \\
+			Sequence = $1d10 + Agility$ \\
+			Actions per turn = $ \lceil Agility / 2 \rceil $
+		\end{center}
+	
+	\item Tag 3 skills, and no more than 3. 4 will not be chosen, neither will 2, except in the case that it's leading to 3. Forget about 5! Once 3 skills are tagged, the third being the last skill tagged, proceed to the last step
+	\item For each Skill, use the formula below, then add 15 if it is a tagged skill
 
+		\begin{center}
+			Skill = $2 + (2 * S.P.E.C.I.A.L.) + \lceil Luck / 2 \rceil$
+		\end{center}
 \end{enumerate}
 
 \subsection{Level Up} 
@@ -279,75 +301,262 @@ Skill = $2 + (2 * S.P.E.C.I.A.L.) + \lceil Luck / 2 \rceil$
 Unlike war, you change. Your adventures around the Mojave will mold you, you'll become more adept at fighting, persuading, fixing things and people in more than one way. The simplest way is to use the following formula to calculate the amount of experience needed for the next level: 
 
 \begin{center}
-Next Level(n) = $25 * (3 * n + 2) * (n - 1)$, where $n$ is the current level
+	Next Level(n) = $25 * (3 * n + 2) * (n - 1)$, where $n$ is the current level
 \end{center}
 
 For instance, the experience needed to reach level 10 is:
 
 \begin{center}
-Next Level(10) = $25 * (3 * 10 + 2) * (10 - 1) = 25 * 32 * 9 = 7200$
+	Next Level(10) = $25 * (3 * 10 + 2) * (10 - 1) = 25 * 32 * 9 = 7200$
 \end{center}
 
 When leveling up, the player gains an amount of skill points to distribute equal to the following formula:
     
 \begin{center}
-Skill points = $10 + \lceil Intelligence / 2 \rceil$
+	Skill points = $10 + \lceil Intelligence / 2 \rceil$
 \end{center}
-
-Finally, every three levels, you can choose a perk from Appendix \ref{app:perks}. Some perks can have more than one rank, that is, be chosen more than once.
 
 However, this method is not exactly straightforward. Maybe it bothers you to get good at energy weapons when all you use is a minigun. A different approach is for the narrator to instead attribute points for successful use of skills, be it a constant value or dice based, and level up players as a result of one or more quests that the player undertake.
 
-\begin{longtable}{|p{2.8cm}|p{1.8cm}|p{1.8cm}|}
+\begin{longtable}{|p{2cm}|p{3.5cm}|p{3cm}|}
 \hline
-\bfseries Difficulty & \bfseries Constant & \bfseries Dice \\
+	\bfseries Difficulty & \bfseries Points (Constant) & \bfseries Points (Dice) \\
 \hline
 \endhead
-Very Hard & 13 & 1d20 \\
-Hard  & 9 & 1d12 \\
-Average & 6 &  1d10 \\
-Easy & 3 & 1d6 \\
-Very Easy & 2 & 1d4 \\
+	Very Hard & 13 & 1d20 \\
+	Hard  & 9 & 1d12 \\
+	Average & 6 &  1d10 \\
+	Easy & 3 & 1d6 \\
+	Very Easy & 2 & 1d4 \\
 \hline
-\end{longtable}{\begin{center}Maybe you don't love dice, maybe you do. \\ We have options for all.\end{center}}
+\hiderowcolors
+\caption{Maybe you don't love dice, maybe you do. \\ We have options for all.}
+\end{longtable}
+
+Finally, every three levels, you can choose a perk from Appendix \ref{app:perks}. Some perks can have more than one rank, that is, be chosen more than once.
 
 \subsubsection{An Example Character - Fink}
 
 So, let's create a sample character. Say, this cat will be a Nightkin that is pacifist whenever able, although that's not very often in the wasteland. Being a former soldier for the Master, this kid has walked a long way to reach the Mojave, so he'll start at level 8. But first things first.
 
-Let's start with a name. Let's go with ``Fink'', because someone called him that and he didn't know what the word meant, but liked the sound. Next, let's make like a waiter and focus on the S.P.E.C.I.A.L.S.. We start with 1 for each stat. Then let's check our bonuses, which are quite nice if I do say so myself: +4 ST, +1 PE, +4 EN, +2 IN, +3 AG, -6 CH. And since we already have the information handy, we can take note of our +15 DT. Then, we decide how to apply 25 SPECIAL points. 
+Let's start with a name. Let's go with ``Fink'', because someone called him that and he didn't know what the word meant, but liked how it sounds. Next, let's make like a waiter and focus on the S.P.E.C.I.A.L.s. We start with 5 for each stat. Then let's check our bonuses, which are quite nice if I do say so myself: +4 ST, +4 EN, +3 AG, -5 CH. That means the base Nightkin has 9 ST, 5 PE, 9 EN, 1 CH (remember, minimum is 1), 5 IN, 8 AG, 5 LU. And since we already have the information handy, we can take note of our +15 DT. Then, we decide how to apply 7 S.P.E.C.I.A.L. points. 
 
-Fink will be tough, silent type (very original, ain't I?). So, let's put +4 ST, +5 PE, +3 EN, leaving us with 12 points left. Let's put enough CH to leave us with something, so another 6 points there. Communication isn't his forte, but he can do the very basic, and we have 6 more points to apply. Seems fair to apply +4 IN, +3 AG. We'll neglect Luck, but if Fink was the lucky type, he probably would die without being exposed to the FEV, dig? 
+Fink will be tough, silent type (very original, ain't I?). Silent also means stealthy, at least for a Supermutant, so Fink needs agility, +2 AG. Strong means both strength and endurance, so +3 ST and +2 EN. No need to affect Perception, Charisma or Intelligence. We'll neglect Luck, but if Fink was the lucky type, he probably would not have been exposed to the FEV, dig? So, Fink ends up with 12 ST, 5 PE, 11 EN, 1 CH, 5 IN, 10 AG, 5 LU, so far.
 
-Next, we'll choose a trait. For simplicity, let's choose Gifted, adding +1 to every SPECIAL stat, but getting -2 to every skill. Easy-peasy, lemon squeezy, so on to sort out our calculated stats: max CW is 150 + 10 * 10, which equals 250. Max HP is 100 + 9 * 20 + 7 * 5, adding to 295. Sequence is a 1d10 roll + Agility, giving us a nice 13. Finally, actions per turn is half agility, rounded up, which is 4.
+Next, we'll choose a trait. For simplicity, let's choose Gifted, adding +1 to every S.P.E.C.I.A.L. stat, but getting -2 to every skill. Easy-peasy, lemon squeezy, so that's on you, and we'll move on to sort out our calculated stats: max CW is 150 + 13 * 10, which equals 280. Max HP is 100 + 11 * 20 + (8 - 1) * 5, adding to 255. Sequence is a 1d10 roll + Agility, giving us a nice 13. Finally, actions per turn is half agility, rounded up, which is 5.
 
 Fink is coming out nicely, isn't he? So now let's move on to skills, and tag three of them. Fink is a former soldier that has had to survive without many friends for a long, long time, so it makes sense for him to have Guns, Survival and Unarmed. 
 
-The last two steps will not be detailed for brevity, after all, they involve all 13 skill. But don't worry, I won't leave you hanging. Let's focus on two skills that would make sense for Fink: Speech and Unarmed. After all, not even Fink could avoid people forever. Speech is dependent upon Charisma, and Unarmed upon Endurance, so we'll do 3 + twice for each of those stats, for starters, which is 7 for Speech and 21 for Unarmed. Then, we need to apply our trait of Gifted, leaving the values as 5 for Speech and 19 for Unarmed. But these values are for level 1, and since then we've gained 7 more levels, accruing a total of 14 skill points per level times 7 levels, which is 98 skill points. Of course we would not apply all those points in just these two skills, so let's say we add 20 points for speech, so Fink can actually try to get things when force is not an option, and another 20 for Unarmed, for a total of 27 and 41. 
+The last two steps will not be detailed for brevity, after all, they involve all 13 skills. But don't worry, I won't leave you hanging. Let's focus on three tagged skills that would most help Fink: Speech, Sneak and Unarmed.
+
+Speech is determined by Charisma, which is one. Not very charismatic, our big boy, meaning he has Speech equal to 2 + (2 * 1) + 3, which equals to 7. Good enough for basic communication. Sneak comes from Agility, 2 + (2 * 11) + 3, so, 27. It's a good start for level 1. Lastly but oh so very not leastly, Unarmed: 2 + (2 * 13) + 3, which means 31 Unarmed, and a punch that you would do well to avoid. Completing these calculations for the other skills is considered trivial and left as an exercise to the reader. But these values are for level 1, and since then we've gained 7 more levels, accruing a total of 12 skill points per level times 7 levels, which is 84 skill points. Sprinkle these points as you think is best.
 
 Lastly, every three levels we gain a perk, meaning we have two perks at level 8. Since he is a survivor, we'll give him Purifier and Hunter, so he can more adequately face strong creatures, dealing more damage. So, finally, we have Fink, ready for adventure. ONWARDS!
 
-\subsection{External Influences}
 
-Of course, you won't be altered only by your choices as a character. All along the Mojave, you'll find armor (see Appendix \ref{app:wearables}), weapons (see Appendix \ref{app:weapons}), chems (see Appendix \ref{app:chems}) and even the environment itself.
+\newpage
 
-\subsubsection{Radiation}
+
+\section{INTERACTIONS}
+
+\epigraph{\textit{When an irresistible force such as you \\
+Meets an old immovable object like me \\
+You can bet just as sure as you live \\
+Somethin's gotta give}}{\textit{Something's Gotta Give - Bing Crosby}}
+
+\subsection{Combat}
+
+Raiders. Radscorpions. Deathclaws. Cazadores. Supermutants. Mole rats. Scared yet? Too bad, because you will likely face one or more of those on your excursions in New Vegas. Hope you will be ready.
+
+Combat happens in a turn-based structure, where actions are ordered by the Sequence value each character has, unless someone gets the element of surprise. Each combatant gets an amount of actions per turn calculated by half the agility, rounded up.
+
+\begin{center}
+	$Actions = \lceil Agility / 2 \rceil$
+\end{center}
+
+Each action point can be spent doing the following:
+
+\begin{itemize}
+	\item Use an item
+	\item Perform an attack
+	\item Change or reload weapons
+	\item Prepare to block an attack
+	\item Run, hide or similar action
+	\item Performing an Aimed Shot, spending one extra action point
+\end{itemize}
+
+To determine if an attack is successful, roll 1d100 against the attacking player skill, and check if the number is lower. That is, the higher the skill, the better the chance of success.
+
+\begin{center}
+        \textit{Hit} = $1d100 <$ Skill for the weapon type \\
+        \textit{Aimed Shot} = $1d100 +$ \textit{Accuracy Penalty} $<$ Skill for the weapon type
+\end{center}
+
+\textit{Aimed Shots} are attacks intended to hit a certain body part, thus, more difficult to pull off. Table \ref{tab:aimedshots} describes possible targets and how each affect hit probability, by adding it to the dice result in the Hit formula, as well as possible results for use by the Narrator.
+
+\begin{longtable}{|p{2cm}|p{2.3cm}|p{2.3cm}|p{6cm}|}
+\hline
+        \bfseries Body Part & \bfseries Accuracy Penalty & \bfseries Damage multiplier & \bfseries Extra Effect \\
+\hline
+\endhead
+        Head & 35 & 3x & kills opponent without helmet \\
+        Torso & 0 & 1.5x & it will hurt \\
+        Eyes & 50 & 5x & might kill instantly \\
+        Groin & 40 & 1.5x & target loses 1d4 turns \\
+        Arms & 20 & 1.5x & disarms target \\
+        Hands & 25 & 2x & disarms target \\
+        Legs & 20 & 1.5x & target can only jump/crawl \\
+        Feet & 25 & 2x & target can only jump/crawl \\
+\hline
+\hiderowcolors
+\caption{It's harder to hit, but \textit{so satisfying!}}
+\label{tab:aimedshots}
+\end{longtable}
+
+Now that you know that you have hit your target, time to find out how much damage you dealt. Appendix \ref{app:weapons} has the damage that each weapon causes.
+%If you are using a weapon, use the following formula:
+%
+%\begin{center}
+%        \textit{Damage for a weapon} = $\lceil$Weapon's dice damage * $(50 + Skill) / 100 \rceil$  -  Target's DT
+%\end{center}
+%
+%Ok, so I'll be the first to admit, this one looks \textbf{complicated}. Translating to a more human language, you roll the weapon's dice damage and take your skill level as a percentage of that damage that you actually make, plus 50 (meaning that, at 100 skill, you can deal 150\% of the dice value in damage), minus the target's Damage Threshold. Looks complicated, right? That's why the PDF version of the sheet does math. However, you can use Table \ref{tab:simpledamage} for an easier time calculating damage.
+%
+%        \begin{longtable}{|p{2cm}|p{3cm}|p{5cm}|}
+%        \hline
+%        \bfseries Skill range & \bfseries Multiply by & \bfseries Again, in peoplespeak \\
+%        \hline
+%        \endhead
+%        0-50 & 0.5 & half the damage\\
+%        50-10 & 1 & normal \\
+%        100-150 & 1.5 & add half the damage \\
+%        150-200 & 2 & double the damage \\
+%        \hline
+%\hiderowcolors
+%        \caption{In case you don't feel like doing the precise maths}
+%        \label{tab:simpledamage}
+%        \end{longtable}
+
+But some people don't like guns. Some people prefer to, let's say ``dialogue'' more up and close. With a knife. Or a pipe, police baton, club, or what have you. Probably more to do with a lack of choice, but anyway. Determining damage from these weapons is a bit different.        
+
+\begin{center}
+	\textit{Melee Damage = Weapon's dice damage + $\lceil Strength / 2 \rceil$ - Target's DT}
+\end{center}
+
+However, lack of choice is not something that afflicts Unarmed bruisers. These people will use their fists, or more likely, their Power Fists, to ``dialogue''. Mojave legend talks about some folks that even ``dialogued'' in this fashion with Deathclaws. Never heard of one who lived to tell the tale, though. Nonetheless, this is how you calculate Unarmed damage.
+
+\begin{center}
+        \textit{Unarmed Damage = $\lceil$Unarmed / $20 + 0.5\rceil$ - Target's DT}
+\end{center}
+
+Now, I know what you must be thinking: Hitting is cool, punching is cooler, but I want people to drop like bloatflies. Don't worry, you will be able to do that!
+
+\begin{center}
+	\textit{Knockdown} - If a melee attack causes damage over 15\% of the target's health, defending player must run a saving throw of 1d10 against their endurance
+\end{center}
+
+And even better: assuming you do \textit{quite a lot of damage}, you might even cripple some limbs. Crippled limbs can't be used and that will affect movement, targeting, sight, even the way you talk.
+
+\begin{center}
+        \textit{Crippling damage} - damage that is caused when target's HP is lower than 30\%, or when it receives over 30\% of its total HP in damage
+\end{center}
+
+Finally, a way to do really a lot of damage is to be sneaky. When the attack can't be seen, it can't be defended, after all.
+
+\begin{center}
+        \textit{Sneaking damage} - If the player is sneaking and undetected, multiply the final damage of the attack by 1d6 + 1
+\end{center}        
+
+And now you know everything you need to know to beat people and not people up.
+
+\subsection{Gambling}
+
+Well, when in Vegas, do what they do in Vegas. Drinking, attending lavish shows, enjoying the fine cuisine and finer prostitutes (for every persuasion). But, unless your play group fancy having a mini cassino on the table, you good folks will probably need a more practical form of handling the almighty gambling. The below formula is useful for all games.
+
+\begin{center}
+	\textit{Gambling} - roll 1d10, and win by having a lower result than Luck.
+\end{center}
+
+Or, more daring players can play a mini-game where they choose a dice face and call how many caps they bet, and the Narrator rolls a same-sided dice and, if the numbers are the same, the player gains twice their betting amount.
+
+\subsection{Disguises}
+
+Some wearables are characteristic of a certain faction. By putting them on, people might not know that you're the person that they hate. Or that they love. This will affect every interaction, even with people who recognize you.
+
+By the way, remember to steer clear of members of factions that hold animosity towards the one you're disguised as. Remember: people rarely believe people that say things like ``I swear I'm not a raider, I'm just wearing raider armor, please stop shooting as I'm really really hurt.''
+
+\subsection{Reputations} 
+
+The reputation is the summary of the relationship between a player and a faction. Do things that please a faction, and you'll be accepted, maybe even idolized. More realistically, sometimes you'll have to choose between two factions, and the one you don't choose will certainly not be happy with you. The people will remember you, so make those memories a good one.
+
+\begin{longtable}{|p{2.3cm}|p{2.3cm}|p{2.3cm}|p{2.3cm}|p{2.3cm}|}
+\hline
+	\textbf{±}  & \textbf{Level 1} & \textbf{Level 2} & \textbf{Level 3} & \textbf{Level 4} \\
+\hline
+\endhead
+	\textbf{Level 1} & Neutral & Accepted & Liked & Idolized \\
+\hline
+	\textbf{Level 2} & Shunned & Mixed & Smiling Troublemaker & Good-Natured Rascal \\
+\hline
+	\textbf{Level 3} & Hated & Sneering Punk & Unpredictable & Dark Hero \\
+\hline
+	\textbf{Level 4} & Vilified & Merciful Thug & Soft-Hearted Devil & Wild Child \\
+\hline
+\hiderowcolors
+\caption{These are the ways you may be known throught the Mojave...}
+\end{longtable}
+
+
+\begin{longtable}{|p{3cm}|p{9cm}|}
+\hline
+	\bfseries Reputation & \bfseries Meaning \\
+\hline
+	Neutral & People don't know enough about you to form an opinion. \\
+	Accepted & Folks have come to accept you for your helpful nature. \\
+	Liked & Enough news of your good works has been passed around that people like you. \\
+	Idolized & Renowned for your extensive support and goodwill, you are idolized by the community. \\
+	Shunned & You've left a poor impression on the community and may be shunned as a result. \\
+	Mixed & A little bit good mixed with a little bit bad, people haven't figured you out yet. \\
+	Smiling Troublemaker & People know you're good at heart even though you're occasionally a troublemaker. \\
+	Good-Natured Rascal & Your reputation as a good-natured friend of the community manages to outshine your dark side. \\
+	Hated & Now that folks know you're bad, most people outright hate you. \\
+	Sneering Punk & Even though you've done some good for the community, people still think you're a punk. \\
+	Unpredictable & No one's sure what to make of your unpredictable nature, but you've left a strong impression. \\
+	Dark Hero & Folks still think you're some kind of hero, but you sure can be nasty sometimes. \\
+	Vilified & For your overwhelmingly monstrous behavior, you have become vilified by the community. \\
+	Merciful Thug & Despite your reputation as a thug, you are known to occasionally show a charitable side. \\
+	Soft-Hearted Devil & Most people say you're the devil himself, but most admit you've also done a world of good. \\
+	Wild Child & Your wild, seemingly capricious behavior leaves people scratching their heads in confusion and avoiding close contact. \\
+\hline
+\hiderowcolors
+\caption{... and this is what they mean, in practice}
+\end{longtable}
+
+\subsection{Sneak}
+
+If no one is looking for the player character, they run a test against sneak.
+If you're in an (N)PC line of sight, you need a critical success to be able to remain hidden. Stealth Boys guarantee success in this, except in the case of critical failure.
+
+
+\subsection{Radiation}
 
 Being close to radiation is enough to perceive that it's dangerous, but until the war, few humans imagined how dangerous it could be. The normal effect is \textbf{radiation sickness}, which causes progressively worse symptoms.
 
 \begin{longtable}{|p{3.3cm}|p{3.1cm}|p{4.3cm}|}
 \hline
-\bfseries Rads & \bfseries Level & \bfseries Effect \\
+	\bfseries Rads & \bfseries Level & \bfseries Effect \\
 \hline
 \endhead
-0-199 &	No Effect & - \\	
-200-399 & Minor Radiation Poisoning & -1 END \\
-400-599 & Advanced Radiation Poisoning & -2 END, -1 AGL \\
-600-799 & Critical Radiation Poisoning & -3 END, -2 AGL, -1 STR \\
-800-999 & Deadly Radiation Poisoning & -3 END, -2 AGL, -2 STR \\
-1000+ & Fatal Radiation Poisoning & DEATH (HP: -10,000) \\
+	0-199 &	No Effect & - \\	
+	200-399 & Minor Radiation Poisoning & -1 END \\
+	400-599 & Advanced Radiation Poisoning & -2 END, -1 AGL \\
+	600-799 & Critical Radiation Poisoning & -3 END, -2 AGL, -1 STR \\
+	800-999 & Deadly Radiation Poisoning & -3 END, -2 AGL, -2 STR \\
+	1000+ & Fatal Radiation Poisoning & DEATH (HP: -10,000) \\
 \hline
-\end{longtable}{\begin{center}Watch out for those rads. They hurt. A LOT.\end{center}}
+\hiderowcolors
+\caption{Watch out for those rads. They hurt. A LOT.}
+\end{longtable}
 
 Some lucky ones, or maybe unlucky ones, through their exposition, suffer physical mutations, a process that is called \textbf{ghoulification}. They begin lose all hair, and suffer terrible burns on all skin, which becomes rough, at least what little skin remains attached to the body. Those afflicted with this condition resemble zombies from bad old horror flicks. The factors that cause ghoulification are not known, and to the unknowing eye, appear to be random.
 
@@ -355,51 +564,104 @@ Every time a player advances a level of radiation sickness, they get another lev
 
 \begin{longtable}{|p{2.8cm}|p{10cm}|}
 \hline
-\bfseries Ghoulification Stage & \bfseries Effect\\
+	\bfseries Ghoulification Stage & \bfseries Effect\\
 \hline
 \endhead
-1 & Voice occasionally becomes more raspy, like a sore throat \\
-2 & Minor burnt-like lesions on the skin \\
-3 & Voice becomes permanently raspy \\
-4 & Loss of chunks of hair \\
-5 & Skin loss with no skin regeneration \\
-6 & Flesh assume the burned appearance \\
-7 & The player is now fully feral \\
+	1 & Voice occasionally becomes more raspy, like a sore throat \\
+	2 & Minor burnt-like lesions on the skin \\
+	3 & Voice becomes permanently raspy \\
+	4 & Loss of chunks of hair \\
+	5 & Skin loss without regeneration \\
+	6 & Flesh assume the burned appearance \\
+	7 & The player is now fully feral \\
 \hline
-\end{longtable}{\begin{center}You always knew ghoulification was unpleasant, but did you expect something like this?\end{center}}
+\hiderowcolors
+\caption{You always knew ghoulification was unpleasant, but did you expect something like this?}
+\end{longtable}
 
-If the player either a) is a ghoul already and takes radiation enough to move over three levels at once (that is, over 600 rads in a short period of time\footnote{One turn, or to the Narrator's discretion}) or b) takes over 800 and the player already has at least one level of ghoulification, they risk becoming a Glowing One. To determine if the player became a Glowing One, roll 1d10: the transformation occurs if the result is greater than the current ghoulification stage plus 2.
+Another possibility is that the player becomes a Glowing One, a ghoul that is so infused with radiation that it leaks from within its own body in the form of a minor glow. 
 
-So, essentially, there are two steps to moving a player's ghoulification level up:
-\begin{enumerate}
-\item Check the next stage in the player's ghoulification meter
-\item Ghoulification = True if 1d10 $>$ player ghoulification stage + 2, otherwise False
-\end{enumerate}
+\begin{center}
+	Glowing (human) = Takes 800 rads \textit{and} 1d10 $<$ 4 \\
+	Glowing (ghoul) = Takes 400 rads \textit{and} 1d10 $>$ player's ghoulification stage \\
+	Avoid going feral (both) = 1d10 $<$ Intelligence \\
+\end{center}
 
-\subsubsection{Exposure to the F.E.V. TODO}
+\subsection{Exposure to the F.E.V.}
 
-This is not your everyday occurrence, but it may happen. Supermutants will throw their prisioners, or perhaps it would be more precise to call them ``future siblings'', on large tanks filled with a strange liquid infused with the Forced Evolution Virus (F.E.V.). After some time, the former human emerges as an enormous green brute, stronger, more agile, more perceptive, and more.
+There is a rumour that tells about how supermutants kidnap humans to mutate them, since supermutants are sterile. Well... it's true. Supermutants will throw their prisioners, or perhaps it would be more precise to call them ``future siblings'', on large tanks filled with a strange liquid infused with the Forced Evolution Virus (F.E.V.). After some time, the former human emerges as an enormous green brute, stronger, more agile, more perceptive, and usually with little to no recollection of their former life.
 
-However, things are not that simple.
+However, there is more to take into consideration.
 
-For starters, F.E.V. subjects should have little radiation damage (i.e. low ghoulification level) to avoid complications in the mutations that the virus causes, otherwise the radiation will cause damage to the mutation process, and these changes are always negative. Another important detail is that there are multiple strains of the F.E.V., though only some of them affect humans. 
+For starters, F.E.V. subjects ideally should have little mutation by radiation, as those mutations introduce complications in the mutations caused by the virus, otherwise the radiation will cause damage to the mutation process, and these changes are always negative. Another important detail is that there are multiple strains of the F.E.V., and only some of them affect humans. 
 
-The \textbf{F.E.V.-II} is the strain that is used to create supermutants. It is derived from the F.E.V.-I, a pre-war strain that was intended to be used as a military weapon. This virus is immune to radiation, which is part of the process to create 
+The \textbf{F.E.V.-I} is a pre-war strain that was intended to be used as a military weapon, and it is believed to have been extinct as research originated the more potent strain II. The Enclave used the research done on this to create a variant to be lethal to people affected by radiation, the F.E.V. Curling-13.
 
-chance to cause increase of increase intellect (1d10/ 2 for increase, 3 for reducing, 5 for staying the same)
+The \textbf{F.E.V.-II} is the strain that is used to create supermutants. For this to happen, the human must have little to no radiation damage, and cannot have been exposed to the mutated F.E.V. in the wastelands. Subjects that don't meet these criteria suffer massive bodily systems overhaul, leading to organ failure and inevitably death. Subjects mutated have their DNA rewritten in recursive patterns encoded in the virus, which lead to increaase celular regeneration at all levels, leading to increased size, muscle mass, reflexes, though that does not necessarily lead to increased intelligence, and potential immortality, since the subject no longer ages and becomes resistant to radiation and diseases. Though there are exceptions, supermutants tend to be dumber than humans, though the exact cause of that is only theorized.
 
+In Washington, D.C., on Vault 87, scientists experimented with a different strain, named after the  Evolutionary Experimentation Program, \textbf{F.E.V.-II E.E.P.} The mutations caused by this strain caused severe reduction in mental faculties that makes them dumber and more hostile, although they retain some speech, and enough motor skills to use weapons and machinery. Like F.E.V.-II, there can be exceptions to this. Mutants affected by this strain are not known to inhabit locations outside the Capital Wasteland area.
 
+Other strains are not known to affect humans in any significant way.
 
-EEP Strain, from FO3
-
-
-\subsubsection{Power Armor}
+\subsection{Power Armor}
 
 Power armor is, as you might have deduced from it's name, \textit{powerful}. Some could say that it will make you feel like some sort of invincible robotic man made of iron. Wearing it, you no longer need to worry about small guns, minor explosions (provided you can get up fast), but sorry, Deathclaws will only see you as really tough canned food. But rejoice, as falling long falls no longer harms you, though it does cause a small tremor near your landing spot that will hurt and stun people around you, which is a good advantage in combat, so keep this in mind. Also, hurting people makes them like you less, so keep this in mind as well.
 
-\subsubsection{Chems}
+Members of the Brotherhood of Steel don't need training to use Power Armor, if their Intelligence is 4 or higher.
+
+\subsection{Chems}
 
 Heeyy, maan, chems are fuuun, riiight? Yes, they are, and they will make you better than you are, for a time... and for a price. The price you pay for chem usage is addiction. Addiction is cumulative. Every time you use a chem, it adds 10\% to the cumulative percentage to get addicted to that substance. Then, to find out if you're addicted, roll 1d100 against the probability to get addicted to the used substance. If the value is lower than current addiction probability, congratulations, now you feel like shit every time you're not under the influence, isn't that nice? Addiction probabilities reduce 10\% for each night of good rest, and addiction itself can be cured by going cold turkey for one in game week, or by going to your local phisician. For a detailed list of effects, once again, check Appendix \ref{app:chems}. 
+
+\begin{longtable}{|p{2.5cm}|p{2cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+	\bfseries Chem & \bfseries Addiction Chance & \bfseries Effect Description & \bfseries Addiction Description \\
+\hline
+	Buffout & 10\% & Sensation of power and invincibilty for 5 turns, then letargia and tiredness for 2 turns & Feelings of tiredness and weakness  \\
+	Jet & 20\% & Feeling energetic, get 2 extra actions the turn the drug is taken, can stack with Rocket and Ultrajet & Irritability and lethargy \\
+	Rocket & 30\% & Feeling very energetic, get 3 extra actions the turn the drug is taken, can stack with Jet and Ultrajet & Irritability and lethargy \\
+	Ultrajet & 40\% & Feeling \textit{very} energetic, player gets 2 extra actions for the next 2 turns, can stack with Jet and Rocket & Irritability and lethargy, does not alleviate jet addiction \\
+	Rebound & 20\% & Makes the user feel energetic and hyperactive & Irritability and lethargy \\
+	Mentats & 5\% & User becomes capable of making intuitive leaps, has increased memory recall and creativity, as well as becoming more charming for 2 turns, and afterwards the user becomes tired and lethargic for 1 turn & Feeling foggy, with a mild buzzing sound on the ears \\
+	Party Time Mentats & 15\% & User becomes capable of making intuitive leaps, has increased memory recall and creativity, as well as becoming more charming for 1 turn, and afterwards the user becomes tired and lethargic for 1 turn & Feeling foggy, with a mild buzzing sound on the ears \\
+	Psycho & 10\% & Paranoia and aggressiveness that result in increased Strength for 4 turns, and after effects fade paranoia for further 1d6 turns, prolonged use might turn symptoms permanent & User feels weaker and is easily distracted \\
+	Med-X & 10\% & Lack of sensitivity to pain for the duration of the drug & Feelings of sluggishness and mental fogginess \\
+	Ant Nectar & 5\% & Increased strength, but user becomes less apt in formulating and expressing ideas & Feeling of general weakness \\
+	Fire Ant Nectar & None & Increases reflexes and gives sensation of chiliness under normal conditions, and user thinks and behaves less rationally & Does not cause addiction\\
+	Coyote Tobacco Chew & 10\% & User feels more aware and energetic & Makes the user feel more irritable and clouds the senses \\
+	Slasher & 20\% & Lack of sensitivity to pain, plus paranoia and aggressiveness that result in increased Strength for 4 turns & User feels weaker, paranoid and is easily distractable \\
+	Hydra & 10\% & Anesthesizes and promote accelerated crippled limb recovery & User feels sickly and feeble \\
+	Turbo & 20\% & Perceived slowdown of time for everything except user & Severe lethargy \\
+	Steady & 80\% & Increasing focus and aim & Feeling of weakness and lethargy \\
+	Fixer & None & Nausea, ``woozyness'', blurred vision and loud static noise for two turns & Does not cause addiction \\
+\hline
+\hiderowcolors
+\caption{Remember, kids, winners use chems responsibly. Contact your local Khans settlement for more information}
+\end{longtable}
+
+\subsection{Some RPG Stuff}
+
+Just to close the mechanic section of this manual, there are a few topics of importance to be discussed.
+
+\subsubsection{Turns}
+
+Turns are a helpful abstraction during combat situations, but they have very little meaning in other situations. For reference, and please, take the following equivalency more as a suggestion than a hard and fast rule. 
+
+\begin{center}
+	Turn = \textit{2 minutes, for converting consumables durations}
+\end{center}
+
+\subsubsection{Criticals} 
+
+Every success is a chance for a critical success. Getting it right feels good, but getting it extra right? That feels \textbf{awesome}. For every success, players can roll on a 1 in 6 chance of getting a critical success, which will improve damage, compensate for bad situations, and make it as real as possible whatever the player is attempting.
+
+Of course, there is \textit{also} the same chance of a critical failure, where things not only will go wrong, they will go wrong BADLY. Missing ammo, ricochets, breaking tools, putting both of your feet and one of your interlocutor's feet on your mouth at the same time... the ground is not the limit.
+
+Choose wisely.
+
+\begin{center}
+	Critical = \textit{roll 1d6. Critical success on 6, critical failure on 1.}
+\end{center}
 
 \newpage
 
@@ -409,298 +671,219 @@ Well, now you know a bit more about individuals of this world, or at least how t
 
 \subsection{Factions}
 
-Few things survived the bombs. 
+The bombs destroyed most things, killed a lot of people, but not all. And, wherever people survive, the similar will join up in tribes. These are the tribes of the Mojave:
 
 \begin{itemize}
-\item \textbf{New California Republic (NCR):} The NCR is an ever-expanding that started in the town of Shady Sands, in New California. Their political structure is very similar to the old USA, with a president, congress, corruption and inefficiency. Although very successful in their expansionist campaign, the Mojave seems to be where they are spread thinnest, and people are starting to notice. After the signing the The Ranger Unification Treaty, which unified their military with the Desert Rangers, a paramilitary group from Nevada that also fought against Caesar's Legion
-\begin{itemize}
-\item \textbf{Rangers:} 
-\end{itemize}
+	\item \textbf{New California Republic (NCR):} The NCR is an ever-expanding that started in the town of Shady Sands, in New California. Their political structure is very similar to the old USA, with a president, congress, corruption and inefficiency. Although very successful in their expansionist campaign, the Mojave seems to be where they are spread thinnest, and people noticed. 
+	\begin{itemize}
+		\item \textbf{Rangers:} an elite force within the NCR Army, handpicked from the standard infantry from the best, focusing on combat and infiltration. Originally a group of hardy survivalists from Nevada, they unified with the NCR Army after the signing of the Ranger Unification Treaty in 2281 to fight Caesar's army
+	\end{itemize}
 
-\item \textbf{The Strip:} The Strip is the most luxurious area in New Vegas. The only entrance is through Freeside, by having 2000 caps (no need to pay, just need to have the money to spend), a passaport, or by being a member in good standing of the NCR, as NCR personnel frequent the Strip during downtime. The Strip has four casinos, each with their own group:
+	\item \textbf{The Strip:} The Strip is the most luxurious area in New Vegas. The only entrance is through Freeside, by having 2000 caps (no need to pay, just need to have the money to spend), a passaport, or by being a member in good standing of the NCR, as NCR personnel frequent the Strip during downtime. The Strip has four casinos, each with their own group:
+	\begin{itemize}
+		\item \textbf{Chairmen (The Tops):} The Chairmen are a faction self-styled after the old Vegas, and the hippest cats around, dig? As in ``no finks allowed''. Civilized by Mr. House, they used to be a tribe known as the Mojave Boot-Riders, but now are the former most important faction in New Vegas, position they lost when their former leader, Benny, got what was coming to him for shooting Courier Six in the head. Currently, their main goal is to get back to the top, without crossing the Securitrons
+		\item \textbf{Omertas (Gomorrah):} A faction that follows the best traditions of the \textit{cosa nostra}, the Omertas are a faction that, although lacking the italian accent, very much follow the old \textit{mafioso} traditions. Five years ago, their leaders were killed by the current leader, Cachino, and the Courier Six. This happened after Courier Six uncovered a plot for a hostile takeover of the Strip by the former leadership, aided by Caesar's Legion. Since then, the Omertas have been very quiet. Maybe too quiet...
+		\item \textbf{White Glove Society (Ultra-Luxe):} Previously ran by a mysterious group that who wore gloves, fancy porcelain masks and \textit{haute couture} clothing, the truth was that most of their members were cannibals. Courier Six and Yes Man cleaned the house up, and now there is zero human meat consumption on the premises, or so it seems. Very little is known about its current staff
+		\item \textbf{Securitrons (Lucky 38):} For many years, nobody entered the Lucky 38. That is, until 2281, when Courier Six was invited by the very owner, Mr. House. However, the hospitality was paid with a bullet from Maria, Benny's 9mm. Soon after, Yes Man replaced House in controlling all Securitrons, who became the staff for the Lucky 38, the most luxurious hotel-casino in the strip. Nowadays, the panoramic cocktail lounge has the best drinks, and a full reservations lists for weeks, and all is managed by Yes Man (who acts more like a ``Maybe Man'', after being reprogrammed with more autonomy), and is owned by Courier Six. Securitrons also serve as the main security force in the Strip, Freeside and Westside
+	\end{itemize} 
 
-\begin{itemize}
-\item \textbf{The Tops (Chairmen):} Home of the best showhouse in New Vegas, the Aces Theater, The Tops is a luxurious hotel-casino. It is commanded by the Chairmen. The Chairmen are a faction self-styled after the old Vegas, and the hippest cats around, dig? As in ``no finks allowed''. Civilized by Mr. House, they used to be a tribe known as the Mojave Boot-Riders, but now are the former most important faction in New Vegas, position they lost when their former leader, Benny, got what was coming to him for shooting Courier Six in the head. Currently, their main goal is to get back to the top, without crossing the Securitrons
+	\item \textbf{Freeside:} right next to the Strip is Freeside, New Vegas' premiere slum. One of the best places to get robbed by random thugs armed with metal pipes and planks. If getting mugged is not your thing, you can find some of everything (or so they say) at Mick and Ralhp's, blow your money on the Atomic Wrangler Casino, or get in contact with the Followers of the Apocalypse at the Old Mormon Fort
+	\begin{itemize}
+		\item \textbf{The Kings:} the only gang that remain in Freeside, since Courier Six nixed the Van Graffs, the Kings are a group of gangbangers inspired in an old religious figure, known only as The King, which is also how their leader is called. A Kings member is easily identified by his black cowlick, peculiar speech, leather jacket, white t-shirt and jeans. Along with the Securitrons, they keep Freeside safe, holding considerable influence on local events
+	\end{itemize}
 
-\item \textbf{Gomorrah (Omertas):} Home of the Brimstone, the best strip club in New Vegas. Managed by the Omertas, a faction that follows the best traditions of the \textit{cosa nostra}. Though they lack the acce nt and the lingo, they very much love power and control. Five years ago, their leaders were killed by the current leader, Cachino, and the Courier Six. This happened after Courier Six uncovered a plot for a hostile takeover of the Strip by the former leadership, aided by Caesar's Legion. Since then, the Omertas have been very quiet. Maybe too quiet...
+	\item \textbf{Raiders:} Raiders are gangs of marauders that roam the Mojave wasteland, attacking those that seem more vulnerable. They tend to use melee weapons or low-grade guns
+	\begin{itemize}
+		\item \textbf{Fiends:} maybe some of the worst the Mojave has to offer, the Fiends are junkies that think about little more than raiding and using chems, and who respect only brute force. They used to buy mostly from the Khans, but are currently becoming more and more desperate looking for a steady flow, since the Khans have mostly turned inwards. They use regular clothes, raider armors and helmets made from the skulls of animals
+		\item \textbf{Jackals:} strong competitors for the title of worst the Mojave has to offer, the Jackals are not addicted to chems, but they are almost entirely cannibalistic. They are originated from Vault 15, in New California, though rarely they have the characteristic Pip Boy. Their group leaders tend to wear Metal Armor, distinguishing themselves in a crowd
+		\item \textbf{Scorpions:} a minor gang, they are a leaderless band of raiders that mostly live from attacks attacking caravans, and usually getting their asses handed to them by Fiends. They almost always wear mercenary cruises
+		\item \textbf{Vipers:} a rarer sight than the other gangs mentioned, the Vipers used to be more shamanistic. Also originated from Vault 15, the Vipers were nearly exterminated by the Khans, and today exist only in minor pockets throught the Mojave, dealing drugs and dreaming of better days
+	\end{itemize}
 
-\item \textbf{Ultra-Luxe (White Glove Society):} Home to the Gourmand, the best and most exclusive restaurant in New Vegas, and the only place where one can find the Strange Meat Pie. Previously ran by a mysterious group that who wore gloves, fancy porcelain masks and haute couture clothing, the truth was that most of their members were cannibals. Courier Six and Yes Man cleaned the house up, and now there is zero human meat consumption on the premises, or so it seems. Very little is known about its current staff
+	\item \textbf{Followers of the Apocalypse:} unlike most other factions, the Followers of the Apocalypse do not impose themselves by strength, but instead they are a force for helping all those in need, although they usually make a healthy exception for raiders. Composed mostly by intellectuals, the Followers have, among their ranks, physicians, chemists, and engineers. Every once in a while, some more combat-capable people end up attached to them, and are begrudgingly accepted as a necessary part of life in the Mojave
+	
+	\item \textbf{Great Khans:} although they are a raider tribe, it would be foolish to mix them with the likes of the Fiends or the Jackals. The Great Khans base their entire culture on what literature they could find about the Mongolian empire, with a great emphasis on warrior's honor. The Khans make a living mostly by supplying drugs for most of the Mojave. Currently, the tribe is focused inwards, working alongside the Followers of the Apocalypse to restore themselves to their former glory. However, the Massacre of Bitter Springs is not forgiven, nor forgotten
+	
+	\item \textbf{Brotherhood of Steel:} the Brotherhood of Steel is a military-religious organization that see themselves as annointed with the task of gathering technology, regulating its use and keeping it from the rest of the world. Once isolationists, the New Vegas chapter of the organization opened its doors to work with the NCR on the Battle of Hoover Dam, though they still refuse to share their tech, and since then they help patrol the Mojave, staying mostly near their secret base around Sloan, Novac, Primm and Goodpsprings 
+	
+	\item \textbf{Caesar's Legion Remnants:} previously a large and arrogant army, the Battle of Hoover Dam left Caesar's Legion a shadow of their former selves. Most of the survivors from the Battle of Hoover Dam were imprisioned by the NCR on NCR Correctional Facility. Many deserters have retreated to Cottonwood Cove, where they live in total isolation
+	
+	\item \textbf{Boomers:} Boomers are the former occupants of Vault 34, where divergences were solved with weapons. After a riot where most of the vault was destroyed, Boomers moved to Nellis Air Base, where they lived in isolation from those they called ``savages'' until Courier Six showed up at their doorstep and began a reintegration process. Currently, Boomers still view most of the ``savages'' with disdain, they have a good relationship with the NCR military, with some Boomers taking positions in the army, and a training program where select officers spend some time living among Boomers
+	
+	\item \textbf{Black Mountain Clan:} once known as ``State of Utobitha'', after its ruler, Tabitha, the Black Mountain is a heavily irradiated area the once housed a satellite array. After Tabitha resumed her voyages, a supermutant named Marcus took over leadership over his peers that didn't want to go to Jacobstown. Marcus str
+	ives to estabilish diplomatic relations with humans, although that is not always possible
+	
+	\item \textbf{Jacobstown:} a little town estabilished on what once was a luxury mountainside hotel, Jacobstown is where supermutants go to live in peace, and especially where nightkins go to receive help from the problems that the abuse of Stealth Boys cause. They are self-sufficient and segregationists, although that is not violently enforced, but both humans and supermutants seem happy to remain that way
+	
+	\item \textbf{Powder Gangers:} a group of prisioners that took over NCR Correctional Facility, the Powder Gangers are easily identified by their clothes, typical dressing for the prision staff, and their predilection for explosive weapons, especially dynamite sticks and grenade launchers, and also low-grade guns like 9mm pistols and varmint rifles. Most of them were dizimated by the coordinated action of the NCR with Courier Six (mostly it was Courier Six)
+	
+	\item \textbf{Westside:} in the old days, Westside was a slum that made Freeside look and feel like The Tops. However, its residents were resourceful and self-sufficient, vastly improving conditions on the neighborhood, especially since Courier Six solved the Fiends problems that plagued them
+	\begin{itemize}
+		\item \textbf{Westide Militia:} citizens dedicated to protecting Westside, who have courage and stubborness that compensate for their lack of training. Nowadays, they are financed by The Thorn, who supply them with Sniper Rifles and 10mm pistols
+		
+		\item \textbf{The Thorn:} once an underground arena, where wastelanders put their mettle to the test by engaging in 1 on 1 combat against the wastelands many beasts, they have expanded their business to include an underground casino, which quickly is allowing Westside to become a veritable power on the Mojave
+	\end{itemize} 
 
-\item \textbf{Lucky 38 (Securitrons):} For many years, nobody entered the Lucky 38. That is, until 2281, when Courier Six was invited by the very owner, Mr. House. However, the hospitality was paid with a bullet from Maria, Benny's 9mm. Soon after, Yes Man replaced House in controlling all Securitrons, who became the staff for the Lucky 38, the most luxurious hotel-casino in the strip. Nowadays, the panoramic cocktail lounge has the best drinks, and a full reservations lists for weeks, and all is managed by Yes Man (who acts more like a ``Maybe Man'', after being reprogrammed with more autonomy), and is owned by Courier Six. Securitrons also serve as the main security force in the Strip, Freeside and Westside
-\end{itemize} 
-
-\item \textbf{Freeside:} right next to the Strip is Freeside, New Vegas' premiere slum. One of the best places to get robbed by random thugs armed with metal pipes and planks. If getting mugged is not your thing, you can find some of everything (or so they say) at Mick and Ralhp's, blow your money on the Atomic Wrangler Casino, or get in contact with the Followers of the Apocalypse at the Old Mormon Fort
-
-\begin{itemize}
-\item \textbf{The Kings:} the only gang that remain in Freeside, since Courier Six nixed the Van Graffs, the Kings are a group of gangbangers inspired in an old religious figure, known only as The King, which is also how their leader is called. A Kings member is easily identified by his black cowlick, peculiar speech, leather jacket, white t-shirt and jeans. Along with the Securitrons, they keep Freeside safe, holding considerable influence on local events
-\end{itemize}
-
-\item \textbf{Raiders:} Raiders are gangs of marauders that roam the Mojave wasteland, attacking those that seem more vulnerable. They tend to use melee weapons or low-grade guns
-
-\begin{itemize}
-\item \textbf{Fiends:} maybe some of the worst the Mojave has to offer, the Fiends are junkies that think about little more than raiding and using chems, and who respect only brute force. They used to buy mostly from the Khans, but are currently becoming more and more desperate looking for a steady flow, since the Khans have mostly turned inwards. They use regular clothes, raider armors and helmets made from the skulls of animals
-
-\item \textbf{Jackals:} strong competitors for the title of worst the Mojave has to offer, the Jackals are not addicted to chems, but they are almost entirely cannibalistic. They are originated from Vault 15, in New California, though rarely they have the characteristic Pip Boy. Their group leaders tend to wear Metal Armor, distinguishing themselves in a crowd
-
-\item \textbf{Scorpions:} a minor gang, they are a leaderless band of raiders that mostly live from attacks attacking caravans, and usually getting their asses handed to them by Fiends. They almost always wear mercenary cruises
-
-\item \textbf{Vipers:} a rarer sight than the other gangs mentioned, the Vipers used to be more shamanistic. Also originated from Vault 15, the Vipers were nearly exterminated by the Khans, and today exist only in minor pockets throught the Mojave, dealing drugs and dreaming of better days
-\end{itemize}
-
-\item \textbf{Followers of the Apocalypse:} unlike most other factions, the Followers of the Apocalypse do not impose themselves by strength, but instead they are a force for helping all those in need, although they usually make a healthy exception for raiders. Composed mostly by intellectuals, the Followers have, among their ranks, physicians, chemists, and engineers. Every once in a while, some more combat-capable people end up attached to them, and are begrudgingly accepted as a necessary part of life in the Mojave
-
-\item \textbf{Great Khans:} although they are a raider tribe, it would be foolish to mix them with the likes of the Fiends or the Jackals. The Great Khans base their entire culture on what literature they could find about the Mongolian empire, with a great emphasis on warrior's honor. The Khans make a living mostly by supplying drugs for most of the Mojave. Currently, the tribe is focused inwards, working alongside the Followers of the Apocalypse to restore themselves to their former glory. However, the Massacre of Bitter Springs is not forgiven, nor forgotten
-
-\item \textbf{Brotherhood of Steel:} the Brotherhood of Steel is a military-religious organization that see themselves as annointed with the task of gathering technology, regulating its use and keeping it from the rest of the world. Once isolationists, the New Vegas chapter of the organization opened its doors to work with the NCR on the Battle of Hoover Dam, though they still refuse to share their tech, and since then they help patrol the Mojave, staying mostly near their secret base around Sloan, Novac, Primm and Goodpsprings 
-
-\item \textbf{Caesar's Legion Remnants:} previously a large and arrogant army, the Battle of Hoover Dam left Caesar's Legion a shadow of their former selves. Most of the survivors from the Battle of Hoover Dam were imprisioned by the NCR on NCR Correctional Facility. Many deserters have retreated to Cottonwood Cove, where they live in total isolation
-
-\item \textbf{Boomers:} Boomers are the former occupants of Vault 34, a Vault where divergences were solved with weapons. After a riot where most of the vault was destroyed, Boomers moved to Nellis Air Base, where they lived in isolation from those they called ``savages'' until Courier Six showed up at their doorstep and began a reintegration process. Currently, Boomers still view most of the ``savages'' with disdain, they have a good relationship with the NCR military, with some Boomers taking positions in the army, and a training program where select officers spend some time living among Boomers
-
-\item \textbf{Black Mountain Clan:} once known as ``State of Utobitha'', after its ruler, Tabitha, the Black Mountain is a heavily irradiated area the once housed a satellite array. After Tabitha resumed her voyages, a supermutant named Marcus took over leadership over his peers that didn't want to go to Jacobstown. Marcus str
-ives to estabilish diplomatic relations with humans, although that is not always possible
-
-\item \textbf{Jacobstown:} a little town estabilished on what once was a luxury mountainside hotel, Jacobstown is where supermutants go to live in peace, and especially where nightkins go to receive help from the problems that the abuse of Stealth Boys cause. They are self-sufficient and segregationists, although that is not violently enforced, but both humans and supermutants seem happy to remain that way
-
-\item \textbf{Powder Gangers:} a group of prisioners that took over NCR Correctional Facility, the Powder Gangers are easily identified by their clothes, typical dressing for the prision staff, and their predilection for explosive weapons, especially dynamite sticks and grenade launchers, and also low-grade guns like 9mm pistols and varmint rifles. Most of them were dizimated by the coordinated action of the NCR with Courier Six (mostly it was Courier Six)
-
-\item \textbf{Westside:} in the old days, Westside was a slum that made Freeside look and feel like The Tops. However, its residents were resourceful and self-sufficient, vastly improving conditions on the neighborhood, especially since Courier Six solved the Fiends problems that plagued them
-
-\begin{itemize}
-\item \textbf{Westide Militia:} citizens dedicated to protecting Westside, who have courage and stubborness that compensate for their lack of training. Nowadays, they are financed by The Thorn, who supply them with Sniper Rifles and 10mm pistols
-
-\item \textbf{The Thorn:} once an underground arena, where wastelanders put their mettle to the test by engaging in 1 on 1 combat against the wastelands many beasts, they have expanded their business to include an underground casino, which quickly is allowing Westside to become a veritable power on the Mojave
-\end{itemize} 
-
-\item \textbf{Searchlight Ghouls:} once members of the Bright Brotherhood, a cult of ghouls that dreamed of flying rockets to undertake ``The Great Journey''. After surviving the crash landing, they walked the Mojave for a long time, until they reached the town of Searchlight. The radiation from the Searchlight Disaster made the town a comfortable environment for them, also being intolerable for non-ghouls, which allowed them to live in relative peace. Perhaps, a little too much peace, even...
-
-\item \textbf{Cities:} for the purposes of reputation, each city counts as its own individual faction.
-
+	\item \textbf{Searchlight Ghouls:} once members of the Bright Brotherhood, a cult of ghouls that dreamed of flying rockets to undertake ``The Great Journey''. After surviving the crash landing, they walked the Mojave for a long time, until they reached the town of Searchlight. The radiation from the Searchlight Disaster made the town a comfortable environment for them, also being intolerable for non-ghouls, which allowed them to live in relative peace. Perhaps, a little too much peace, even...
+	
+	\item \textbf{Cities:} for the purposes of reputation, each city counts as its own individual faction.
 \end{itemize}
 
 \subsection{Main Cities and Settlements TODO}
 
 \begin{itemize}
-\item \textbf{The Strip:} The Strip is the heart of New Vegas, though to access this heart, one needs caps. A lot of caps. To be left through by the three Securitrons that guide its only access, a person must have over 2000 caps in their possession (it's not an entry fee, just a verification of wealth) or a passport. Having gone through the door, one is greeted by a long street where only the more affluent, and NCR soldiers, circulate, under the watchful eyes of Protectrons. Besides all the best casinos in Vegas, it's where are located the NCR embassy, Vault 21, and the train that runs between The Strip and Fort McCarran. 
+	\item \textbf{The Strip:} The Strip is the heart of New Vegas, though to access this heart, one needs caps. A lot of caps. To be left through by the three Securitrons that guide its only access, a person must have over 2000 caps in their possession (it's not an entry fee, just a verification of wealth) or a passport. Having gone through the door, one is greeted by a long street where only the more affluent, and NCR soldiers, circulate, under the watchful eyes of Protectrons. Besides all the best casinos in Vegas, it's where are located the NCR embassy, Vault 21, and the train that runs between The Strip and Fort McCarran. 
+	\begin{itemize}
+		\item \textbf{The Casinos:} All four casinos share much in common: blackjack tables, slots, luxury rooms, and a proihibiton of carrying arms inside (although sneaky patrons tend to overlook this rule). The main differences are \textit{décor} and main attraction. 
+	\begin{itemize}
+		\item \textbf{Gomorrah:} Home of the Brimstone, the den of the best vices in New Vegas and managed by the Omertas, Gomorrah puts the ``sin'' back in ``casinos''. It's main attraction is the strip club, the Brimstone. After the failed alliance with Caesar's Legion, they saw a notable decrease in attendance, since practically all NCR soldiers started boycotting the establishment.
+		\item \textbf{The Ultra-Luxe:} Home to the Gourmand, the best and most exclusive restaurant in New Vegas, and the only place where you can find premium beef outside of Shady Sands. Even faced with heavy competition from the Lucky 38, they can still claim to be the most luxurious installation on the Mojave. And that is a matter of honor, more important than life itself for some of the White Masks.
+		\item \textbf{The Tops:} Home of the best showhouse in New Vegas, the Aces Theater, The Tops is a luxurious place. Once considered the best casino of Vegas, it is managed by the Chairmen, a former tribe styled after the cool casino mafia from the past, with nice suits but also a good right hook. The Tops has the best showhouse around, with such cool acts as the musician Lonesome Drifter and the ghoul comedian Hadrian.
+		\item \textbf{Lucky 38:} The most luxurious casino on New Vegas, with a 360° panoramic cocktail lounge that allows its patrons to have a full view of the Mojave, 24 hours per day. The whole staff is composed by reprogrammed Securitrons, which makes it the safest casino of all, with a staff available at all times. It's managed by the Yes Man, on behalf of its owner, The Courier.
+	\end{itemize}
+\end{itemize}
+
+	\item \textbf{Westside:}
+	
+	\item \textbf{Freeside:} the poor neighborhood that surrounds the Strip, Freeside has a lot of rundown buildings used as shelter by it's inhabitants. A single pipe supplies water for everyone, and a member of the Kings is tasked with keeping distribution reasonable. Home to Mick and Ralph's, a shop where you can find almost anything, for the right price. Finally, it was also where the energy gun store Van Graff was located, before the Courier killed all of them for crimes that were never fully judged.
+	\begin{itemize}
+		\item \textbf{Atomic Wrangler:} the best casino outside the strip, the Atomic Wrangler is a rundown joint that has musicians, blackjack, hookers. They sell high quality drugs, though, due to their impressive labs, created and supplied by the Followers of the Apocalypse.
+		\item \textbf{The King's:} an old religious temple, The King's School of Impersonation still holds relics from the deity of its time, a man known only as the King. This ancient religion inspires the gang that currently occupies the building, the Kings, who follow in the King's image and mannerisms.
+	\end{itemize}
+
+	\item \textbf{Old Mormon Fort:} an old fortress in the middle of Freeside occupied by the Followers of the Apocalypse, the Old Mormon Fort has two towers that serve as quarters for the Followers. Inside its yard are laid several tents, as well as the foundations of a new hospital being built from the money the Followers made by keeping the distillery in the Atomic Wrangler in working condition.
+	
+	\item \textbf{Goodsprings:} a western small town, it has a few still inhabitable houses, a general store, a Doctor's house and a saloon. It is also the famous as the place where the Courier was brought back from the dead. This has caused the town to receive many visitors, among them sickly people looking to be saved just like the Courier was.
+	
+	\item \textbf{Primm:} 
+	
+	\item \textbf{Novac:}
+	
+	\item \textbf{Hidden Valley:}
+	
+	\item \textbf{Nipton:}
+	
+	\item \textbf{Cottonwood Cove:}
+	
+	\item \textbf{NCR Correctional Facility:}
+	
+	\item \textbf{Fort McCarran:}
+	
+	\item \textbf{Nellis Air Base:}
+	
+	\item \textbf{Jacobstown:}
+	
+	\item \textbf{New Vegas Sewers:}
+	
+	\item \textbf{The One:} Rumor has it that somewhere out in the Mojave lies one of the atomic bombs from the great war, undetonated. Those who have seen it, or who know about it, call it ``The One''.
+	
+	\item \textbf{Bitter Springs:}
+	
+	\item \textbf{Red Rock Canyon:}
+	
+	\item \textbf{NCR Bases:}
+	
+	\item \textbf{Searchlight:}
+\end{itemize}
+
+\subsection{Vaults TODO}
+
 \begin{itemize}
-\item \textbf{The Casinos:} All four casinos share much in common: blackjack tables, slots, luxury rooms, and a proihibiton of carrying arms inside (although sneaky patrons tend to overlook this rule). The main differences are \textit{décor} and main attraction. 
-\begin{itemize}
-\item \textbf{Lucky 38:} it is the most luxurious casino, with a famous panoramic cocktail lounge that allows its patrons to see the most of the Mojave. It's whole staff is composed by reprogrammed Securitrons, which makes it the safest casino of all. It's managed by the Yes Man, on behalf of its owner, The Courier.
-\item \textbf{Gomorrah:} managed by the Omertas, Gomorrah puts the ``sin'' back in ``casinos''. It's main attraction is the strip club, the Brimstone. After the failed alliance with Caesar's Legion, they saw a notable decrease in attendance, since practically all NCR soldiers started boycotting the establishment.
-\item \textbf{The Ultra-Luxe:} though they claim to be the most luxurious experience available in the region, nowadays they are a distant second. Even with all the efforts of the new White Glove Society, their services can't match the speed and quality of the Securitrons from Lucky 38, though the restaurant The Gourmand is still the most notable on the region, especially since all rumours about it serving human meat have been quelled.
-\item \textbf{The Tops:} former best casino of Vegas, it is managed by the Chairmen, a former tribe styled after the cool casino mafia from the past, with nice suits but also a good right hook. The Tops has the best showhouse around, with such cool acts as the musician Lonesome Drifter and the ghoul comedian Hadrian.
-\end{itemize}
-\end{itemize}
-
-\item \textbf{Westside:}
-
-\item \textbf{Freeside:} the poor neighborhood that surrounds the Strip, Freeside has a lot of rundown buildings used as shelter by it's inhabitants. A single pipe supplies water for everyone, and a member of the Kings is tasked with keeping distribution reasonable. Home to Mick and Ralph's, a shop where you can find almost anything, for the right price. Finally, it was also where the energy gun store Van Graff was located, before the Courier killed all of them for crimes that were never fully judged.
-\begin{itemize}
-\item \textbf{Atomic Wrangler:} the best casino outside the strip, the Atomic Wrangler is a rundown joint that has musicians, blackjack, hookers. They sell high quality drugs, though, due to their impressive labs, created and supplied by the Followers of the Apocalypse.
-\item \textbf{The King's:} an old religious temple, The King's School of Impersonation still holds relics from the deity of its time, a man known only as the King. This ancient religion inspires the gang that currently occupies the building, the Kings, who follow in the King's image and mannerisms.
-\end{itemize}
-
-\item \textbf{Old Mormon Fort:} an old fortress in the middle of Freeside occupied by the Followers of the Apocalypse, the Old Mormon Fort has two towers that serve as quarters for the Followers. Inside its yard are laid several tents, as well as the foundations of a new hospital being built from the money the Followers made by keeping the distillery in the Atomic Wrangler in working condition.
-
-\item \textbf{Goodsprings:} a western small town, it has a few still inhabitable houses, a general store, a Doctor's house and a saloon. It is also the famous as the place where the Courier was brought back from the dead. This has caused the town to receive many visitors, among them sickly people looking to be saved just like the Courier was.
-
-\item \textbf{Primm:} 
-
-\item \textbf{Novac:}
-
-\item \textbf{Hidden Valley:}
-
-\item \textbf{Nipton:}
-
-\item \textbf{Cottonwood Cove:}
-
-\item \textbf{NCR Correctional Facility:}
-
-\item \textbf{Fort McCarran:}
-
-\item \textbf{Nellis Air Base:}
-
-\item \textbf{Jacobstown:}
-
-\item \textbf{New Vegas Sewers:}
-
-\item \textbf{The One:} Rumor has it that somewhere out in the Mojave lies one of the atomic bombs from the great war, undetonated. Those who have seen it, or who know about it, call it ``The One''.
-
-\item \textbf{Bitter Springs:}
-
-\item \textbf{Red Rock Canyon:}
-
-\item \textbf{NCR Bases:}
-
-\item \textbf{Searchlight:}
+	\item \textbf{Vault 3:}  It is occupied by the Fiends, who killed all of the Vault's original occupants. The Fiends use Vault 3 as a secure fortress and drug den.
+	
+	\item \textbf{Vault 11:} Infamous as one of the most monstruous vaults devised by Vault-Tec, it served as a social experiment. 
+	
+	Evidence gathered from computer terminals throughout the Vault describes how Vault residents selected an annual sacrifice from among their members through democratic elections. This individual would serve as overseer, and at the end of their term, they were required to enter a chamber and submit to execution. According to the residents, this would satisfy the requirement and spare the remaining dwellers.
+	
+	\item \textbf{Vault 19:} This vault was once occupied by escaped convicts who planned to use the sulfur deposits below to become a great power in Vegas. That is, until the Courier showed up and blew the Vault to high heavens with everyone inside. It's location is a destroyed parking lot between Bonnie Springs and Whittaker farmstead, northeast of Goodsprings, though very little remains to be seen there.
+	
+	\item \textbf{Vault 21:} is a Vault-Tec Vault that was once hidden under Las Vegas, Nevada. It has since been converted into a hotel/casino. Like the Lucky 38, it is currently owned by the Courier. However, it's mainly managed by Sarah Weintraub, due to the Courier's hands off approach to his power over the Mojave.
+	
+	\item \textbf{Vault 22:} door is open, with various kinds of plants around the exterior and creatures such as giant mantises. It is located and can be approached from east of Jacobstown and west from the Thorn.
+	
+	\item \textbf{Vault 24:} In \textit{Fallout: New Vegas}, this was a cut vault with no content actually assigned to it. That makes it perfect as a starting place for Vault-Dweller characters. The users can create assign any experiments to it to match their characters, or the Narrator can assign whatever they need to tell their story. Also, its location can be anywhere. Have to say, thanks for cutting this one, Obsidian!
+	
+	\item \textbf{Vault 34:} As part of the Vault social experiment, the armory was overstocked with weapons and ammunition which gave it a gun focused culture.[1] It was also equipped with a great number of recreational facilities, including a full-sized swimming pool, at the cost of living space. When overpopulation became a problem, part of their population moved to the desert, where they got into conflict with the natives and eventually ended up on Nellis Air Base.
+	
+	\item \textbf{Securitron Vault:} The securitron vault is a bunker in the Mojave Wasteland located under the weather monitoring station at The Fort. It is where most of the Securitrons currently found in the Mojave were located before the Second Battle of Hoover Dam. Although most people think assume there is nothing of value left, that might not be entirely true.
 \end{itemize}
 
-\section{A Little Bit of History TODO}
+
+\section{A Little Bit of History - TODO}
 
 \begin{itemize}
-\item \textbf{First Battle of the Hoover Dam}
-
-\item \textbf{Second Battle of Hoover Dam}
-
-\item \textbf{Pacification of the Three Tribes}: What each tribe waas and what they became
-
-\item \textbf{Massacre of Bitter Spring}
-
-\item \textbf{Operation: Sunburst}
-
-\item \textbf{Massacre of Nipton}
-
-\item \textbf{Searchlight Disaster}
-
-\item \textbf{The Double Bombing:} When the Courier bombed NCR and Legion -- no one knows who it was. Legend says it was the Courier, but they denied, and there were no witnesses
+	\item \textbf{First Battle of the Hoover Dam}
+	
+	\item \textbf{Second Battle of Hoover Dam}
+	
+	\item \textbf{Pacification of the Three Tribes}: What each tribe waas and what they became
+	
+	\item \textbf{Massacre of Bitter Spring}
+	
+	\item \textbf{Operation: Sunburst}
+	
+	\item \textbf{Massacre of Nipton}
+	
+	\item \textbf{Searchlight Disaster}
+	
+	\item \textbf{The Double Bombing:} When the Courier bombed NCR and Legion -- no one knows who it was. Legend says it was the Courier, but they denied, and there were no witnesses
 \end{itemize}
+
 
 \newpage
-
-\section{Interactions HEAVY TODO}
-
-\epigraph{\textit{When an irresistible force such as you \\
-Meets an old immovable object like me \\
-You can bet just as sure as you live \\
-Somethin's gotta give}}{\textit{Something's Gotta Give - Bing Crosby}}
-
-\subsection{Combat}
-
-    Combat Basics
-        Combat happens in a turn structure, where each character has a number of actions expressed by
-            * $Actions = \lceil Agility / 2 \rceil$
-
-        Each action can be one of the following:
-            * Use an item
-            * Perform an attack
-            * Change or reload weapons
-            * Prepare to block an attack
-            * Run, hide or similar action
-        A player can spend an additional action to perform an Aimed Shot.
-
-        $Hit = 1d100 < Skill for the weapon type$
-
-        $Damage for a weapon = Weapon's dice damage * (50 + Skill) / 100¹ - Target's DT$
-        ¹ For ease, round it up
-        
-        $Melee Damage = Weapon's dice damage + \lceil Strength / 2 \rceil - Target's DT$
-
-        $Unarmed Damage = \lceil Unarmed skill / 20 + 0.5 \rceil - Target's DT$
-
-        Knockdown - If a melee attack causes damage over 30\% of the targets health, defending player must run a saving throw of 1d10 against their endurance
-
-        Crippling damage - [HOW CRIPPLE WORKS]
-
-        Sneaking damage - If the player is sneaking and undetected, multiply the final damage of the attack by 1d6 + 1
-
-        Aimed Shot - For the cost of an extra action, the player can aim a shot to a specific part of the target's body. Precision calculation table?
-        
-        Spread - Multiplication of dice values is done to simulate the spread of automatic weapons like machine guns and miniguns
-        
-\subsection{Gambling}
-
-\subsection{Disguises}
-
-Some wearables are characteristic of a certain faction. By putting them on, people might not know that you're the person that they hate (or love). Just remember to avoid characters that would recognize you, and steer clear of factions that hold animosity towards the one you're impersonating. Remember: people rarely believe sentences like ``I swear I'm not a raider, I'm just wearing raider armor''.
-
-
-\subsection{Reputations} 
-
-The reputation is the summary of the relationship between a player and a faction. Do things that please a faction, and you'll be accepted, maybe even idolized. More realistically, sometimes you'll have to choose between two factions, and the one you don't choose will certainly not be happy with you. The people will remember you, so make those memories a good one.
-
-\begin{longtable}{|p{2.3cm}|p{2.3cm}|p{2.3cm}|p{2.3cm}|p{2.3cm}|}
-\hline
-\textbf{±}  & \textbf{Level 1} & \textbf{Level 2} & \textbf{Level 3} & \textbf{Level 4} \\
-\hline
-\endhead
-\textbf{Level 1} & Neutral & Accepted & Liked & Idolized \\
-\hline
-\textbf{Level 2} & Shunned & Mixed & Smiling Troublemaker & Good-Natured Rascal \\
-\hline
-\textbf{Level 3} & Hated & Sneering Punk & Unpredictable & Dark Hero \\
-\hline
-\textbf{Level 4} & Vilified & Merciful Thug & Soft-Hearted Devil & Wild Child \\
-\hline
-\end{longtable}{These are the ways you may be known throught the Mojave...}
-
-\begin{longtable}{|p{3cm}|p{9cm}|}
-\hline
-\bfseries Reputation & \bfseries Meaning \\
-\hline
-Neutral & People don ' t know enough about you to form an opinion. \\
-Accepted & Folks have come to accept you for your helpful nature. \\
-Liked & Enough news of your good works has been passed around that people like you. \\
-Idolized & Renowned for your extensive support and goodwill, you are idolized by the community. \\
-Shunned & You ' ve left a poor impression on the community and may be shunned as a result. \\
-Mixed & A little bit good mixed with a little bit bad, people haven ' t figured you out yet. \\
-Smiling Troublemaker & People know you ' re good at heart even though you ' re occasionally a troublemaker. \\
-Good-Natured Rascal & Your reputation as a good-natured friend of the community manages to outshine your dark side. \\
-Hated & Now that folks know you ' re bad, most people outright hate you. \\
-Sneering Punk & Even though you ' ve done some good for the community, people still think you ' re a punk. \\
-Unpredictable & No one ' s sure what to make of your unpredictable nature, but you ' ve left a strong impression. \\
-Dark Hero & Folks still think you ' re some kind of hero, but you sure can be nasty sometimes. \\
-Vilified & For your overwhelmingly monstrous behavior, you have become vilified by the community. \\
-Merciful Thug & Despite your reputation as a thug, you are known to occasionally show a charitable side. \\
-Soft-Hearted Devil & Most people say you ' re the devil himself, but most admit you ' ve also done a world of good. \\
-Wild Child & Your wild, seemingly capricious behavior leaves people scratching their heads in confusion and avoiding close contact. \\
-\hline
-\end{longtable}{... and this is what they mean, in practice}
-
-\subsection{Sneak}
-
-If no one is looking for the player character, they run a test against sneak.
-If you're in an (N)PC line of sight, you need a critical success to be able to remain hidden. Stealth Boys guarantee success in this, except in the case of critical failure
-
-
+\textit{      }
 \newpage
 
 \appendix
-\addtolength{\oddsidemargin}{-0.4in}
-\addtolength{\evensidemargin}{-0.4in}
-\addtolength{\textwidth}{0.8in}
+\addtolength{\oddsidemargin}{-0.9in}
+\addtolength{\evensidemargin}{-0.9in}
+\addtolength{\textwidth}{1.8in}
 \section{TABLES}
-\input{table_traits}
-\label{app:traits}
-\input{table_perks}
-\label{app:perks}
+	\input{table_traits}
+	\label{app:traits}
+	\input{table_perks}
+	\label{app:perks}
 \subsection{CONSUMABLES}
-\input{table_food}
-\input{table_drinks}
-\input{table_chems}
-\label{app:chems}
-\input{table_venom}
+	\input{table_food}
+	\input{table_drinks}
+	\input{table_chems}
+	\label{app:chems}
+	%\input{table_venom}
+	
 \newpage
+
 \subsection{WEAPONS}
 \label{app:weapons}
-\input{table_pistols}
-\input{table_rifles}
-\input{table_smg}
-\input{table_shotguns}
-\input{table_heavyw}
-\input{table_energyp}
-\input{table_energyr}
-\input{table_energyhw}
-\input{table_projectiles}
-\input{table_thrown}
-\input{table_placed}
-\input{table_bladed}
-\input{table_blunt}
+	\input{table_pistols}
+	\input{table_rifles}
+	\input{table_smg}
+	\input{table_shotguns}
+	\input{table_heavyw}
+	\input{table_energyp}
+	\input{table_energyr}
+	\input{table_energyhw}
+	\input{table_projectiles}
+	\input{table_thrown}
+	\input{table_placed}
+	\input{table_bladed}
+	\input{table_blunt}
 \newpage
 \subsection{WEARABLES}
 \label{app:wearables}
-\input{table_clothes}
-\input{table_larmor}
-\input{table_marmor}
-\input{table_harmor}
-\input{table_helmets}
-\input{table_glasses}
-\input{table_hats}
+	\input{table_clothes}
+	\input{table_larmor}
+	\input{table_marmor}
+	\input{table_harmor}
+	\input{table_helmets}
+	\input{table_glasses}
+	\input{table_hats}
 \newpage
-\addtolength{\oddsidemargin}{-0.8in}
-\addtolength{\evensidemargin}{-0.8in}
-\addtolength{\textwidth}{1.6in}
-\subsection{CREATURES}
-\input{table_creatures}
-
+\addtolength{\textheight}{1.9in}
+\begin{landscape}
+\subsection{Creatures}
+	\input{table_creatures}
+\end{landscape}
+\subsection{NPCs}
+	\input{table_npc}
 
 \end{document}
