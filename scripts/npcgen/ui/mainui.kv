@@ -1,0 +1,29 @@
+<MainLayout>:
+  orientation: 'vertical'
+  npcs: npc_list
+  GridLayout:
+    cols: 2
+    rows: 1
+    size_hint_y: None
+    height: dp(108)
+    padding: dp(8)
+    spacing: dp(16)
+    RecycleView:
+      id: npc_list
+      viewclass: 'Button'
+      RecycleBoxLayout:
+        default_size: None, dp(26)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        multiselect: False
+        touch_multiselect: False
+        orientation: 'vertical'
+    BoxLayout:
+      orientation: 'vertical'
+      Button:
+        text: "New"
+      Button:
+        text: "Delete"
+      Button:
+        text: "Config"

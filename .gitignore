@@ -139,8 +139,7 @@ acs-*.bib
 
 # hyperref
 *.brf
-
-# knitr
+ knitr
 *-concordance.tex
 # TODO Comment the next line if you want to keep your tikz graphics files
 *.tikz
@@ -297,3 +296,9 @@ TSWLatexianTemp*
 
 # End of https://www.toptal.com/developers/gitignore/api/latex
 *.csv
+
+*__pycache__*
+*.idea
+Pipfile.lock
+
+

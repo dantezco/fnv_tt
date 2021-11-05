@@ -11,7 +11,7 @@ class LatexTable:
         self.parse()
 
     def parse(self) -> None:
-        with open(self._path, 'r') as file:
+        with open(self._path, "r") as file:
             for line in file.readlines():
                 line_parsed = re.match(self._regex, line)
                 if line_parsed:
@@ -32,4 +32,4 @@ class LatexTable:
         raise StopIteration
 
     def __str__(self):
-        return f'Table {self._name} with {len(self._data)} lines of data'
+        return f"Table {self._name} with {len(self._data)} lines of data"

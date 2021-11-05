@@ -1,5 +1,6 @@
 from dice import Dice
 
+
 class Enemy:
     def __init__(self, hp: int, dt: int, name: str) -> None:
         self._hp = hp
@@ -26,11 +27,10 @@ class Weapon:
 
     def use(self) -> int:
         damage_done = int(self._dice.roll())
-        return damage_done #* ((50 + self._player_skill) / 100))
+        return damage_done  # * ((50 + self._player_skill) / 100))
 
     def reset_dice(self) -> None:
         self._dice.reset_cumulative_damage()
 
     def __str__(self) -> str:
-        return f'{self._name}'
-
+        return f"{self._name}"

@@ -1,8 +1,9 @@
 import re
 import random
 
+
 class Dice:
-    def __init__(self, description: str = '1d6') -> None:
+    def __init__(self, description: str = "1d6") -> None:
         d, cd = self._parse(text=description)
         self._dice = d
         self._cumulative_dice = cd
@@ -14,7 +15,9 @@ class Dice:
     def _parse(self, text: str) -> tuple:
         has_cumulative_damage = "plus cumulative" in text
 
-        end_dice_text = text.find("plus cumulative") if has_cumulative_damage else len(text)
+        end_dice_text = (
+            text.find("plus cumulative") if has_cumulative_damage else len(text)
+        )
         start_cumulative_dice = end_dice_text + 15
 
         dice_text = text[:end_dice_text]
@@ -40,7 +43,7 @@ class Dice:
             parsed_value = self.parse_dice_token(token=token)
             dice_expression += parsed_value
         dice_value = eval(dice_expression)
-        
+
         cumulative_dice_expression = ""
         if self._cumulative_dice:
             for token in self._cumulative_dice:
@@ -55,7 +58,7 @@ class Dice:
         return value
 
     def _roll_dice(self, dice: str) -> int:
-        parsed_dice = [int(t) for t in dice.split('d')]
+        parsed_dice = [int(t) for t in dice.split("d")]
         result = 0
         for value in range(parsed_dice[0]):
             result += random.randint(1, parsed_dice[1])
