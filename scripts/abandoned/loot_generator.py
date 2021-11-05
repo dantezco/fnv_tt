@@ -1,7 +1,7 @@
 from latex_table import LatexTable
 
-class LootGenerator:
 
+class LootGenerator:
     def __init__(self):
         pass
 
@@ -18,12 +18,9 @@ class LootGenerator:
         ]
         table = []
         for path, regex in items_paths:
-            items = LatexTable(name="Consumables",
-                               regex=regex,
-                               path=path)
+            items = LatexTable(name="Consumables", regex=regex, path=path)
             for item in items:
                 table.append(item)
-
 
 
 if __name__ == "__main__":

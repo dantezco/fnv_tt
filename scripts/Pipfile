@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "~=2.3"
+pytest = "~=6.2"
+coverage = "~=5.5"
+pytest-cov = "*"
+
+[packages]
+PyDTMC = "~=6.6"
+names = "~=0.3"
+kivy= "~=2.0"
+cython = "~=0.29"
+
+[requires]
+python_version = "3.8"
