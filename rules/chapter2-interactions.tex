@@ -1,0 +1,313 @@
+
+\section{INTERACTIONS}
+
+\epigraph{\textit{When an irresistible force such as you \\
+Meets an old immovable object like me \\
+You can bet just as sure as you live \\
+Somethin's gotta give}}{\textit{Something's Gotta Give - Bing Crosby}}
+
+\subsection{SPECIAL/Skill Check}
+
+Okay, so you have all those skills. You can barter. You can sneak. You can repair. Hopefully, you can survive. But how do you use them? Well, that's easy.
+
+\begin{center}
+	\textit{General Skill Check} = 1d100 $<$ skill total \\
+	\textit{General SPECIAL Check} = 1d12 $<$ skill total
+\end{center}
+
+``But... skills only go up to 10'', I can hear you thinking\footnote{Yes, I can hear your thoughts. Don't worry, I won't tell, but \textit{shame on you}.}, and the answer is simple: it's no fun if you always succeed at everything. 
+
+And the way to interpret the weird rolls of a d100 is as follows: 
+\begin{itemize}
+	\item 00 in the tens and 1 in the units = 1
+	\item 10 in the tens and 0 in the units = 10
+	\item 00 in the tens and 0 in the units = 100
+\end{itemize}
+
+There are other schools of thinking, but they are dumb, mean and they will switch your Stimpak with a Sunset Salsaparrilla if you're not careful, so just avoid them.
+
+\subsection{Combat}
+
+Raiders. Radscorpions. Deathclaws. Cazadores. Supermutants. Mole rats. Scared yet? Too bad, because you will likely face one or more of those on your excursions in New Vegas. Hope you will be ready.
+
+Combat happens in a turn-based structure, where actions are ordered by the Sequence value each character has, unless someone gets the element of surprise. Each combatant gets an amount of actions per turn calculated by half the agility, rounded up.
+
+\begin{center}
+	$Actions = \lceil Agility / 2 \rceil$
+\end{center}
+
+Each action point can be spent doing the following:
+
+\begin{itemize}
+	\item Use an item
+	\item Perform an attack
+	\item Change or reload weapons
+	\item Prepare to block an attack
+	\item Run, hide or similar action
+	\item Performing an Aimed Shot, spending one extra action point
+\end{itemize}
+
+To determine if an attack is successful, roll 1d100 against the attacking player skill, and check if the number is lower. That is, the higher the skill, the better the chance of success.
+
+\begin{center}
+        \textit{Hit} = $1d100 <$ Skill for the weapon type \\
+        \textit{Aimed Shot} = $1d100 +$ \textit{Accuracy Penalty} $<$ Skill for the weapon type
+\end{center}
+
+\textit{Aimed Shots} are attacks intended to hit a certain body part, thus, more difficult to pull off. Table \ref{tab:aimedshots} describes possible targets and how each affect hit probability, by adding it to the dice result in the Hit formula, as well as possible results for use by the Narrator.
+
+\begin{longtable}{|p{2cm}|p{2.3cm}|p{2.3cm}|p{6cm}|}
+\hline
+        \bfseries Body Part & \bfseries Accuracy Penalty & \bfseries Damage multiplier & \bfseries Extra Effect \\
+\hline
+\endhead
+        Head & 35 & 3x & kills opponent without helmet \\
+        Torso & 0 & 1.5x & it will hurt \\
+        Eyes & 50 & 5x & might kill instantly \\
+        Groin & 40 & 1.5x & target loses 1d4 turns \\
+        Arms & 20 & 1.5x & disarms target \\
+        Hands & 25 & 2x & disarms target \\
+        Legs & 20 & 1.5x & target can only jump/crawl \\
+        Feet & 25 & 2x & target can only jump/crawl \\
+\hline
+\hiderowcolors
+\caption{It's harder to hit, but \textit{so satisfying!}}
+\label{tab:aimedshots}
+\end{longtable}
+
+Now that you know that you have hit your target, time to find out how much damage you dealt. Appendix \ref{app:weapons} has the damage that each weapon causes.
+
+But some people don't like guns. Some people prefer to, let's say ``dialogue'' more up and close. With a knife. Or a pipe, police baton, club, or what have you. Probably more to do with a lack of choice, but anyway. Determining damage from these weapons is a bit different.        
+
+\begin{center}
+	\textit{Melee Damage = Weapon's dice damage * $\lceil$(Melee / 100)$\rceil$ + $\lceil Strength \rceil$ - Target's DT}
+\end{center}
+
+However, lack of choice is not something that afflicts Unarmed bruisers. These people will use their fists, or more likely, their Power Fists, to ``dialogue''. Mojave legend talks about some folks that even ``dialogued'' in this fashion with Deathclaws. Never heard of one who lived to tell the tale, though. Nonetheless, this is how you calculate Unarmed damage.
+
+\begin{center}
+        \textit{Unarmed Damage = Weapon's dice damage * $\lceil$(Unarmed / 100)$\rceil$ + $\lceil$ Strength $\rceil$ - Target's DT}
+\end{center}
+
+Now, I know what you must be thinking: Hitting is cool, punching is cooler, but I want people to drop like bloatflies. Don't worry, you will be able to do that!
+
+\begin{center}
+	\textit{Knockdown} - If a melee attack causes damage over 15\% of the target's health, defending player must run a saving throw of 1d10 against their endurance
+\end{center}
+
+And even better: assuming you do \textit{quite a lot of damage}, you might even cripple some limbs. Crippled limbs can't be used and that will affect movement, targeting, sight, even the way you talk.
+
+\begin{center}
+        \textit{Crippling damage} - damage that is caused when target's HP is lower than 30\%, or when it receives over 30\% of its total HP in damage
+\end{center}
+
+Finally, a way to do really a lot of damage is to be sneaky. When the attack can't be seen, it can't be defended, after all.
+
+\begin{center}
+        \textit{Sneaking damage} - If the player is sneaking and undetected, multiply the final damage of the attack by 1d6 + 1
+\end{center}        
+
+And now you know everything you need to know to beat people and not people up.
+
+\subsection{Gambling}
+
+Well, when in the Strip, do as the Strippers. Wait, not \textit{those} Strippers. Drinking, attending lavish shows, enjoying the fine cuisine and finer prostitutes (available for every persuasion!). But, unless your play group fancy having a mini cassino on the table, you good folks will probably need a more practical form of handling the almighty gambling. The below formula is useful for all games.
+
+\begin{center}
+	\textit{Gambling} - roll 1d12, and win by having a lower result than Luck.
+\end{center}
+
+Or, more daring players can play a mini-game where they choose a dice face and call how many caps they bet, and the Narrator rolls a same-sided dice and, if the numbers are the same, the player gains twice their betting amount.
+
+\subsection{Disguises}
+
+Some wearables are characteristic of a certain faction. By putting them on, people might not know that you're the person that they hate. Or that they love. This will affect every interaction, even with people who recognize you.
+
+By the way, remember to steer clear of members of factions that hold animosity towards the one you're disguised as. Remember: people rarely believe people that say things like ``I swear I'm not a raider, I'm just wearing raider armor, please stop shooting as I'm really really wounded and those bullets hurt!''
+
+\subsection{Reputations} 
+
+The reputation is the summary of the relationship between a player and a faction. Do things that please a faction, and you'll be accepted, maybe even idolized. More realistically, sometimes you'll have to choose between two factions, and the one you don't choose will certainly not be happy with you. The people will remember you, so make those memories a good one.
+
+\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+	\textbf{Bad / Good}  & \textbf{Level 1} & \textbf{Level 2} & \textbf{Level 3} & \textbf{Level 4} \\
+\hline
+\endhead
+	\textbf{Level 1} & Neutral & Accepted & Liked & Idolized \\
+\hline
+	\textbf{Level 2} & Shunned & Mixed & Smiling Troublemaker & Good-Natured Rascal \\
+\hline
+	\textbf{Level 3} & Hated & Sneering Punk & Unpredictable & Dark Hero \\
+\hline
+	\textbf{Level 4} & Vilified & Merciful Thug & Soft-Hearted Devil & Wild Child \\
+\hline
+\hiderowcolors
+\caption{These are the ways you may be known throught the Mojave...}
+\end{longtable}
+
+
+\begin{longtable}{|p{3cm}|p{9cm}|}
+\hline
+	\bfseries Reputation & \bfseries Meaning \\
+\hline
+	Neutral & People don't know enough about you to form an opinion. \\
+	Accepted & Folks have come to accept you for your helpful nature. \\
+	Liked & Enough news of your good works has been passed around that people like you. \\
+	Idolized & Renowned for your extensive support and goodwill, you are idolized by the community. \\
+	Shunned & You've left a poor impression on the community and may be shunned as a result. \\
+	Mixed & A little bit good mixed with a little bit bad, people haven't figured you out yet. \\
+	Smiling Troublemaker & People know you're good at heart even though you're occasionally a troublemaker. \\
+	Good-Natured Rascal & Your reputation as a good-natured friend of the community manages to outshine your dark side. \\
+	Hated & Now that folks know you're bad, most people outright hate you. \\
+	Sneering Punk & Even though you've done some good for the community, people still think you're a punk. \\
+	Unpredictable & No one's sure what to make of your unpredictable nature, but you've left a strong impression. \\
+	Dark Hero & Folks still think you're some kind of hero, but you sure can be nasty sometimes. \\
+	Vilified & For your overwhelmingly monstrous behavior, you have become vilified by the community. \\
+	Merciful Thug & Despite your reputation as a thug, you are known to occasionally show a charitable side. \\
+	Soft-Hearted Devil & Most people say you're the devil himself, but most admit you've also done a world of good. \\
+	Wild Child & Your wild, seemingly capricious behavior leaves people scratching their heads in confusion and avoiding close contact. \\
+\hline
+\hiderowcolors
+\caption{... and this is what they mean, in practice}
+\end{longtable}
+
+\subsection{Sneak}
+
+If no one is looking for the player character, they run a test against sneak.
+If you're in an (N)PC line of sight, you need a critical success to be able to remain hidden. Stealth Boys guarantee success in this, except in the case of critical failure.
+
+
+\subsection{Radiation}
+
+Being close to radiation is enough to perceive that it's dangerous, but until the war, few humans imagined how dangerous it could be. The normal effect is \textbf{radiation sickness}, which causes progressively worse symptoms.
+
+\begin{longtable}{|p{1.6cm}|p{5cm}|p{4.3cm}|}
+\hline
+	\bfseries Rads & \bfseries Level & \bfseries Effect \\
+\hline
+\endhead
+	0-199 &	No Effect & - \\	
+	200-399 & Minor Radiation Poisoning & -1 END \\
+	400-599 & Advanced Radiation Poisoning & -2 END, -1 AGL \\
+	600-799 & Critical Radiation Poisoning & -3 END, -2 AGL, -1 STR \\
+	800-999 & Deadly Radiation Poisoning & -3 END, -2 AGL, -2 STR \\
+	1000+ & Fatal Radiation Poisoning & DEATH (HP: -10,000) \\
+\hline
+\hiderowcolors
+\caption{Watch out for those rads. They hurt. A LOT.}
+\end{longtable}
+
+Some lucky ones, or maybe unlucky ones, through their exposition, suffer physical mutations, a process that is called \textbf{ghoulification}. They begin lose all hair, and suffer terrible burns on all skin, which becomes rough, at least what little skin remains attached to the body. Those afflicted with this condition resemble zombies from bad old horror flicks. The factors that cause ghoulification are not known, and to the unknowing eye, appear to be random.
+
+Every time a player advances a level of radiation sickness, they get another level of ghoulification. Roll 1d10, and if the value is lower or equal to the current level of ghoulification, they suffer the symptoms all the symptons up to their level, according to the table below. For instance, if a player fails a ghoulification check at level 3, their character starts to experience partial hair loss, minor burns \textit{and} occasional voice raspyness. 
+
+\begin{longtable}{|p{2.8cm}|p{10cm}|}
+\hline
+	\bfseries Ghoulification Stage & \bfseries Effect\\
+\hline
+\endhead
+	1 & Voice occasionally becomes more raspy, like a sore throat \\
+	2 & Minor burnt-like lesions on the skin \\
+	3 & Voice becomes permanently raspy \\
+	4 & Loss of chunks of hair \\
+	5 & Skin loss without regeneration \\
+	6 & Flesh assume the burned appearance \\
+	7 & The player is now fully feral \\
+\hline
+\hiderowcolors
+\caption{You always knew ghoulification was unpleasant, but did you expect something like this?}
+\end{longtable}
+
+Another possibility is that the player becomes a Glowing One, a ghoul that is so infused with radiation that it leaks from within its own body in the form of a minor glow. 
+
+\begin{center}
+	\textit{Glowing (human)} = Takes 800 rads \textit{and} 1d10 $<$ 4 \\
+	\textit{Glowing (ghoul)} = Takes 400 rads \textit{and} 1d10 $>$ player's ghoulification stage \\
+	\textit{Avoid going feral (both)} = 1d10 $<$ Intelligence \\
+\end{center}
+
+\subsection{Exposure to the F.E.V.}
+
+There is a rumour that tells about how supermutants kidnap humans to mutate them, since supermutants are sterile. Well... it's true. Supermutants will throw their prisioners, or perhaps it would be more precise to call them ``future siblings'', on large tanks filled with a strange liquid infused with the Forced Evolution Virus (F.E.V.). After some time, the former human emerges as an enormous green brute, stronger, more agile, more perceptive, and usually with little to no recollection of their former life.
+
+However, there is more to take into consideration.
+
+For starters, F.E.V. subjects ideally should have little mutation by radiation, as those mutations introduce complications in the mutations caused by the virus, otherwise the radiation will cause damage to the mutation process, and these changes are always negative. Another important detail is that there are multiple strains of the F.E.V., and only some of them affect humans. 
+
+The \textbf{F.E.V.-I} is a pre-war strain that was intended to be used as a military weapon, and it is believed to have been extinct as research originated the more potent strain II. The Enclave used the research done on this to create a variant to be lethal to people affected by radiation, the F.E.V. Curling-13.
+
+The \textbf{F.E.V.-II} is the strain that is used to create supermutants. For this to happen, the human must have little to no radiation damage, and cannot have been exposed to the mutated F.E.V. in the wastelands. Subjects that don't meet these criteria suffer massive bodily systems overhaul, leading to organ failure and inevitably death. Subjects mutated have their DNA rewritten in recursive patterns encoded in the virus, which lead to increaase celular regeneration at all levels, leading to increased size, muscle mass, reflexes, though that does not necessarily lead to increased intelligence, and potential immortality, since the subject no longer ages and becomes resistant to radiation and diseases. Though there are exceptions, supermutants tend to be dumber than humans, though the exact cause of that is only theorized.
+
+In Washington, D.C., on Vault 87, scientists experimented with a different strain, named after the  Evolutionary Experimentation Program, \textbf{F.E.V.-II E.E.P.} The mutations caused by this strain caused severe reduction in mental faculties that makes them dumber and more hostile, although they retain some speech, and enough motor skills to use weapons and machinery. Like F.E.V.-II, there can be exceptions to this. Mutants affected by this strain are not known to inhabit locations outside the Capital Wasteland area.
+
+Other strains are not known to affect humans in any significant way.
+
+\subsection{Power Armor}
+
+Power armor is, as you might have deduced from it's name, \textit{powerful}. Some could say that it will make you feel like some sort of invincible man made of iron.
+
+When you wear a Power Armor, only the luckiest of shots from a small gun can affect you, and the same goes for minor explosions, like a mine or a small grenade, though it might throw you off your balance. Sorry to say, it's not actually invincible, and Deathclaws will only see you as really tough canned food. But you are also no longer affected by fall damage at all, thanks to shock dampeners. Not only that, but a side-effect of the shock dampeners is to stun any characters nearby, causing 1d4 damage. Keep in mind, this includes non-hostile characters, who may not remain non-hostile for long after your unintentional attack.
+
+You can also breath underwater, as long as you're wearing a full set.
+
+You need the Power Armor Training perk to use a Power Armor. Members of the Brotherhood of Steel don't need training to use Power Armor, if their Intelligence is 4 or higher.
+
+\subsection{Chems}
+
+Heeyy, maan, chems are fuuun, riiight? Yes, they are, and they will make you better than you are, for a time... and for a price. The price you pay for chem usage is addiction. Addiction is cumulative. Every time you use a chem, it adds 10\% to the cumulative percentage to get addicted to that substance. Then, to find out if you're addicted, roll 1d100 against the probability to get addicted to the used substance. If the value is lower than current addiction probability, congratulations, now you feel like shit every time you're not under the influence, isn't that nice? Addiction probabilities reduce 10\% for each night of good rest, and addiction itself can be cured by going cold turkey for one in game week, or by going to your local phisician. For a detailed list of effects, once again, check Appendix \ref{app:chems}. 
+
+\begin{longtable}{|p{2.5cm}|p{2cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+	\bfseries Chem & \bfseries Addiction Chance & \bfseries Effect Description & \bfseries Addiction Description \\
+\hline
+	Buffout & 10\% & Sensation of power and invincibilty for 5 turns, then letargia and tiredness for 2 turns & Feelings of tiredness and weakness  \\
+	Jet & 20\% & Feeling energetic, get 2 extra actions the turn the drug is taken, can stack with Rocket and Ultrajet & Irritability and lethargy \\
+	Rocket & 30\% & Feeling very energetic, get 3 extra actions the turn the drug is taken, can stack with Jet and Ultrajet & Irritability and lethargy \\
+	Ultrajet & 40\% & Feeling \textit{very} energetic, player gets 2 extra actions for the next 2 turns, can stack with Jet and Rocket & Irritability and lethargy, does not alleviate jet addiction \\
+	Rebound & 20\% & Makes the user feel energetic and hyperactive & Irritability and lethargy \\
+	Mentats & 5\% & User becomes capable of making intuitive leaps, has increased memory recall and creativity, as well as becoming more charming for 2 turns, and afterwards the user becomes tired and lethargic for 1 turn & Feeling foggy, with a mild buzzing sound on the ears \\
+	Party Time Mentats & 15\% & User becomes capable of making intuitive leaps, has increased memory recall and creativity, as well as becoming more charming for 1 turn, and afterwards the user becomes tired and lethargic for 1 turn & Feeling foggy, with a mild buzzing sound on the ears \\
+	Psycho & 10\% & Paranoia and aggressiveness that result in increased Strength for 4 turns, and after effects fade paranoia for further 1d6 turns, prolonged use might turn symptoms permanent & User feels weaker and is easily distracted \\
+	Med-X & 10\% & Lack of sensitivity to pain for the duration of the drug & Feelings of sluggishness and mental fogginess \\
+	Ant Nectar & 5\% & Increased strength, but user becomes less apt in formulating and expressing ideas & Feeling of general weakness \\
+	Fire Ant Nectar & None & Increases reflexes and gives sensation of chiliness under normal conditions, and user thinks and behaves less rationally & Does not cause addiction\\
+	Coyote Tobacco Chew & 10\% & User feels more aware and energetic & Makes the user feel more irritable and clouds the senses \\
+	Slasher & 20\% & Lack of sensitivity to pain, plus paranoia and aggressiveness that result in increased Strength for 4 turns & User feels weaker, paranoid and is easily distractable \\
+	Hydra & 10\% & Anesthesizes and promote accelerated crippled limb recovery & User feels sickly and feeble \\
+	Turbo & 20\% & Perceived slowdown of time for everything except user & Severe lethargy \\
+	Steady & 80\% & Increasing focus and aim & Feeling of weakness and lethargy \\
+	Fixer & None & Nausea, ``woozyness'', blurred vision and loud static noise for two turns & Does not cause addiction \\
+\hline
+\hiderowcolors
+\caption{Remember, kids, winners use chems responsibly. Contact your local Khans settlement for more information, and if you need help, contact your local Followers camp}
+\end{longtable}
+
+\subsection{Some RPG Stuff}
+
+Just to close the mechanic section of this manual, there are a few topics of importance to be discussed.
+
+\subsubsection{Turns}
+
+Turns are a helpful abstraction during combat situations, but they have very little meaning in other situations. For reference, and please, take the following equivalency more as a suggestion than a hard rule. 
+
+\begin{center}
+	\textit{Turn} = \textit{10 seconds, or to Narrator's discretion}
+\end{center}
+
+\subsubsection{Criticals} 
+
+Every success is a chance for a critical success. YAY. So is every failure. De-yay. Getting it right feels good, but getting it extra right? That feels \textbf{awesome}. Of course, there is \textit{also} the same chance of a critical failure, where things not only will go wrong, they will go wrong BADLY. Missing ammo, ricochets, breaking tools, putting both of your feet and one of your interlocutor's feet on your mouth at the same time... the ground is not the limit. Or not. Some Narrators are assholes.
+
+For every roll, there is a chance to have a \textit{crit}. Check the table below.
+
+\begin{longtable}{|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+	\bfseries Dice & \bfseries Critical Success & \bfseries Critical Failure \\
+\hline
+d12 & 1 & 12 \\
+d100 & 1 & 99, 100 \\
+\hline
+\hiderowcolors
+\caption{Are you feeling lucky, \textit{punk?}}
+\end{longtable}
