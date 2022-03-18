@@ -48,59 +48,59 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(14.55, 2)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Str,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Str,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 2.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusStr,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusStr,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 3.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Per,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Per,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 3.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusPer,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusPer,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 4.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=End,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=End,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 4.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusEnd,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusEnd,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 5.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Cha,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Cha,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 5.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusCha,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusCha,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 6.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Int,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Int,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 6.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusInt,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusInt,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 7.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Agi,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Agi,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 7.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusAgi,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusAgi,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 8.05)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=Luc,value=1]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=Luc,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(14.55, 8.5)
-\TextField[maxlen=2,align=2,height=15pt,width=23pt,name=BonusLuc,value=0]{}
+\TextField[maxlen=2,align=0,height=15pt,width=23pt,name=BonusLuc,value=0]{}
 \end{textblock}
 
 
@@ -109,34 +109,34 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(0.14, 1.85)
-\TextField[maxlen=100,align=2,height=15pt,width=185pt,name=name]{}
+\TextField[maxlen=100,align=0,height=15pt,width=185pt,name=name]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 2.7)
-\TextField[maxlen=4,align=2,height=15pt,width=35pt,name=age]{}
+\TextField[maxlen=4,align=0,height=15pt,width=35pt,name=age]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 3.6)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=level,value=1]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=level,value=1]{}
 \end{textblock}
 
 \begin{textblock}{3}(1.3, 2.7)
-\TextField[maxlen=100,align=2,height=15pt,width=140pt,name=racebg]{}
+\TextField[maxlen=100,align=0,height=15pt,width=140pt,name=racebg]{}
 \end{textblock}
 
 \begin{textblock}{3}(1.3, 3.6)
-\TextField[maxlen=100,align=2,height=15pt,width=70pt,name=xp,value=0]{}
+\TextField[maxlen=100,align=0,height=15pt,width=70pt,name=xp,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(3.45, 3.6)
 \TextField[calculate={%
     var f_level= this.getField("level");
     event.value = 25 * ((3 * f_level.value + 3) + 2) * (f_level.value);
-  },maxlen=4,align=2,height=15pt,width=60pt,name=nextLevel,value=200]{}
+  },maxlen=4,align=0,height=15pt,width=60pt,name=nextLevel,value=200]{}
 \end{textblock}
 
 \begin{textblock}{3}(5.75, 1.85)
-\TextField[maxlen=4,align=2,height=15pt,width=35pt,name=hpcurr,value=0]{}
+\TextField[maxlen=4,align=0,height=15pt,width=35pt,name=hpcurr,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(7.1, 1.85)
 \TextField[calculate={%
@@ -145,11 +145,11 @@
     var f_Level = this.getField("level");
     var f_bonushp = this.getField("bonushp");
     event.value = 100 + ((f_End.value + f_BonusEnd.value) * 20) + f_bonushp.value + ((f_Level.value - 1) * 5);
-  },maxlen=4,align=2,height=15pt,width=35pt,name=hpmax]{}
+  },maxlen=4,align=0,height=15pt,width=35pt,name=hpmax]{}
 \end{textblock}
 
 \begin{textblock}{3}(5.75, 2.68)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=cwcurr,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=cwcurr,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(7.1, 2.68)
 \TextField[calculate={%
@@ -157,11 +157,11 @@
     var f_BonusStr = this.getField("BonusStr");
     var f_bonuscw = this.getField("bonuscw");
     event.value = 150 + ((f_Str.value + f_BonusStr.value) * 10) + f_bonuscw.value;
-  },maxlen=3,align=2,height=15pt,width=35pt,name=cwmax]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=cwmax]{}
 \end{textblock}
 
 \begin{textblock}{3}(5.75, 3.37)
-\TextField[maxlen=3,align=2,height=15pt,width=60pt,name=sequence,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=60pt,name=sequence,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(5.75, 4.08)
@@ -169,7 +169,7 @@
     var f_Int = this.getField("Int");
     var f_BonusInt = this.getField("BonusInt");
     event.value = 10 + Math.ceil((f_Int.value + f_BonusInt.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=60pt,name=skillpointsperlevel,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=60pt,name=skillpointsperlevel,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(5.75, 4.76)
@@ -178,19 +178,19 @@
     var f_BonusAgi = this.getField("BonusAgi");
     var f_bonusact = this.getField("bonusact");
     event.value = Math.ceil((f_Agi.value + f_BonusAgi.value) / 2) + f_bonusact.value;
-  },maxlen=3,align=2,height=15pt,width=60pt,name=actionsperturn,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=60pt,name=actionsperturn,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.7, 2.6)
-\TextField[maxlen=100,align=2,height=15pt,width=35pt,name=caps,value=0]{}
+\TextField[maxlen=100,align=0,height=15pt,width=35pt,name=caps,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.8, 3.75)
-\TextField[maxlen=100,align=2,height=15pt,width=45pt,name=dt,value=0]{}
+\TextField[maxlen=100,align=0,height=15pt,width=45pt,name=dt,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.8, 4.4)
-\TextField[maxlen=100,align=2,height=15pt,width=45pt,name=rads,value=0]{}
+\TextField[maxlen=100,align=0,height=15pt,width=45pt,name=rads,value=0]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -262,11 +262,11 @@
 \end{textblock}
 
 \begin{textblock}{3}(10.15, 5.54)
-\TextField[maxlen=3,align=2,height=10pt,width=25pt,name=hpperturn]{}
+\TextField[maxlen=3,align=0,height=10pt,width=25pt,name=hpperturn]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.15, 5.81)
-\TextField[maxlen=3,align=2,height=10pt,width=25pt,name=turns]{}
+\TextField[maxlen=3,align=0,height=10pt,width=25pt,name=turns]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -274,19 +274,19 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(8.55,6.76)
-\TextField[maxlen=3,align=2,height=15pt,width=55pt,name=bonushp,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=55pt,name=bonushp,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(8.49,7.17)
-\TextField[maxlen=3,align=2,height=15pt,width=55pt,name=bonuscw,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=55pt,name=bonuscw,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.17,7.59)
-\TextField[maxlen=3,align=2,height=15pt,width=45pt,name=bonusseq,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=45pt,name=bonusseq,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(9.76,8.01)
-\TextField[maxlen=3,align=2,height=15pt,width=45pt,name=bonusact,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=45pt,name=bonusact,value=0]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -294,7 +294,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(12.72,10.58)
-\TextField[maxlen=3,align=2,height=15pt,width=45pt,name=dicedamage,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=45pt,name=dicedamage,value=0]{}
 \end{textblock}
 
 \begin{textblock}{3}(9.87,9.84)
@@ -303,10 +303,11 @@
   calculate={%
     var f_Str = this.getField("Str");
     var f_BonusStr = this.getField("BonusStr");
-    var f_skillUnarmed = this.getField("skillUnarmed");
-    event.value = Math.ceil(((f_skillUnarmed.value + 50) / 100) * (f_Str.value + f_BonusStr.value));
+    var f_dice = this.getField("dicedamage");
+    var f_skillUnarmed = this.getField("finalUnarmed");
+    event.value = Math.ceil(f_dice.value * f_skillUnarmed.value / 100) + (f_Str.value + f_BonusStr.value);
   },
-   align=2,height=15pt,width=45pt,name=dmgUnarmed,readonly=true]{}
+   align=0,height=15pt,width=45pt,name=dmgUnarmed,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(9.2,10.27)
@@ -316,52 +317,54 @@
     var f_Str = this.getField("Str");
     var f_BonusStr = this.getField("BonusStr");
     var f_dice = this.getField("dicedamage");
-    event.value = f_dice.value + Math.ceil((f_Str.value + f_BonusStr.value) / 2);
+    var f_skillMelee = this.getField("finalMelee");
+    event.value = Math.ceil(f_dice.value * f_skillMelee.value / 100) + (f_Str.value + f_BonusStr.value);
   },
-   align=2,height=15pt,width=45pt,name=dmgMelee,readonly=true]{}
+   align=0,height=15pt,width=45pt,name=dmgMelee,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(9.08,10.68)
 \TextField[
   maxlen=40,
   calculate={%
-    var f_skillGuns = this.getField("skillGuns");
+    var f_skillGuns = this.getField("finalGuns");
     var f_dice = this.getField("dicedamage");
     event.value = Math.ceil(f_dice.value * ((f_skillGuns.value + 50) / 100));
   },
-   align=2,height=15pt,width=45pt,name=dmgGuns,readonly=true]{}
+   align=0,height=15pt,width=45pt,name=dmgGuns,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(9.5,11.1)
 \TextField[
   maxlen=40,
   calculate={%
-    var f_skillEnergy = this.getField("skillEnergy");
+    var f_skillEnergy = this.getField("finalEnergy");
     var f_dice = this.getField("dicedamage");
     event.value = Math.ceil(f_dice.value * ((f_skillEnergy.value + 50) / 100));
   },
-   align=2,height=15pt,width=45pt,name=dmgEnergy,readonly=true]{}
+   align=0,height=15pt,width=45pt,name=dmgEnergy,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.3,11.51)
 \TextField[
   maxlen=40,
   calculate={%
-    var f_skillExplosives = this.getField("skillExplosives");
+    var f_skillExplosives = this.getField("finalExplosives");
     var f_dice = this.getField("dicedamage");
     event.value = Math.ceil(f_dice.value * ((f_skillExplosives.value + 50) / 100));
   },
-   align=2,height=15pt,width=45pt,name=dmgExplosives,readonly=true]{}
+   align=0,height=15pt,width=45pt,name=dmgExplosives,readonly=true]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           SKILLS AND BONUS
 %%%%%%%%%%%%%%%%%%%%%%
+
 \begin{textblock}{1}(0.14,6.23)
 \CheckBox[width=1em,height=1em,name=tagBarter]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,6.19)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillBarter,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillBarter,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,6.19)
 \TextField[calculate={%
@@ -371,14 +374,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalBarter,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalBarter,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,6.65)
 \CheckBox[width=1em,height=1em,name=tagEnergy]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,6.60)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillEnergy,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillEnergy,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,6.60)
 \TextField[calculate={%
@@ -388,14 +391,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalEnergy,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalEnergy,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,7.08)
 \CheckBox[width=1em,height=1em,name=tagExplosives]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,7.03)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillExplosives,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillExplosives,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,7.03)
 \TextField[calculate={%
@@ -405,14 +408,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalExplosives,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalExplosives,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,7.52)
 \CheckBox[width=1em,height=1em,name=tagGuns]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,7.46)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillGuns,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillGuns,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,7.46)
 \TextField[calculate={%
@@ -422,14 +425,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalGuns,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalGuns,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,7.96)
 \CheckBox[width=1em,height=1em,name=tagLockpick]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,7.89)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillLockpick,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillLockpick,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,7.89)
 \TextField[calculate={%
@@ -439,14 +442,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalLockpick,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalLockpick,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,8.41)
 \CheckBox[width=1em,height=1em,name=tagMedicine]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,8.33)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillMedicine,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillMedicine,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,8.33)
 \TextField[calculate={%
@@ -456,14 +459,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalMedicine,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalMedicine,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,8.85)
 \CheckBox[width=1em,height=1em,name=tagMelee]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,8.75)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillMelee,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillMelee,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,8.75)
 \TextField[calculate={%
@@ -473,14 +476,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalMelee,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalMelee,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,9.29)
 \CheckBox[width=1em,height=1em,name=tagRepair]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,9.19)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillRepair,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillRepair,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,9.19)
 \TextField[calculate={%
@@ -490,14 +493,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalRepair,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalRepair,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,9.72)
 \CheckBox[width=1em,height=1em,name=tagScience]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,9.62)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillScience,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillScience,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,9.62)
 \TextField[calculate={%
@@ -507,14 +510,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalScience,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalScience,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,10.15)
 \CheckBox[width=1em,height=1em,name=tagSneak]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,10.06)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillSneak,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillSneak,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,10.06)
 \TextField[calculate={%
@@ -524,14 +527,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalSneak,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalSneak,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,10.57)
 \CheckBox[width=1em,height=1em,name=tagSpeech]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,10.47)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillSpeech,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillSpeech,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,10.47)
 \TextField[calculate={%
@@ -541,14 +544,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalSpeech,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalSpeech,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,11.01)
 \CheckBox[width=1em,height=1em,name=tagSurvival]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,10.91)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillSurvival,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillSurvival,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,10.91)
 \TextField[calculate={%
@@ -558,14 +561,14 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalSurvival,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalSurvival,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{1}(0.14,11.42)
 \CheckBox[width=1em,height=1em,name=tagUnarmed]{}
 \end{textblock}
 \begin{textblock}{3}(5.16,11.35)
-\TextField[maxlen=3,align=2,height=15pt,width=35pt,name=skillUnarmed,value=0]{}
+\TextField[maxlen=3,align=0,height=15pt,width=35pt,name=skillUnarmed,value=0]{}
 \end{textblock}
 \begin{textblock}{3}(6.35,11.35)
 \TextField[calculate={%
@@ -575,7 +578,7 @@
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
     event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
-  },maxlen=3,align=2,height=15pt,width=35pt,name=finalUnarmed,readonly=true]{}
+  },maxlen=3,align=0,height=15pt,width=35pt,name=finalUnarmed,readonly=true]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -583,13 +586,13 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(0.14, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=60pt,name=reputationFaction1]{}
+\TextField[maxlen=100,align=0,height=15pt,width=60pt,name=reputationFaction1]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame1]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame1]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy1]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy1]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 12.87)
 \TextField[calculate={%
@@ -629,17 +632,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation1]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation1]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction2]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction2]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame2]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame2]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy2]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy2]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 13.33)
 \TextField[calculate={%
@@ -679,17 +682,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation2]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation2]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction3]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction3]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame3]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame3]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy3]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy3]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 13.8)
 \TextField[calculate={%
@@ -729,17 +732,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation3]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation3]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction4]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction4]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame4]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame4]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy4]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy4]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 14.28)
 \TextField[calculate={%
@@ -779,17 +782,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation4]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation4]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction5]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction5]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame5]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame5]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy5]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy5]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 14.74)
 \TextField[calculate={%
@@ -829,17 +832,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation5]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation5]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction6]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction6]{}
 \end{textblock}
 \begin{textblock}{3}(2.05, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame6]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame6]{}
 \end{textblock}
 \begin{textblock}{3}(3.14, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy6]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy6]{}
 \end{textblock}
 \begin{textblock}{3}(4.29, 15.22)
 \TextField[calculate={%
@@ -879,19 +882,19 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=125pt,name=reputation6]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation6]{}
 \end{textblock}
 
 %%%     COLUMN 2
 
 \begin{textblock}{3}(8, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction7]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction7]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame7]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame7]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 12.87)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy7]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy7]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 12.87)
 \TextField[calculate={%
@@ -931,17 +934,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation7]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation7]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction8]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction8]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame8]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame8]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 13.33)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy8]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy8]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 13.33)
 \TextField[calculate={%
@@ -981,17 +984,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation8]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation8]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction9]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction9]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame9]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame9]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 13.8)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy9]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy9]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 13.8)
 \TextField[calculate={%
@@ -1031,17 +1034,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation9]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation9]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction10]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction10]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame10]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame10]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 14.28)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy10]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy10]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 14.28)
 \TextField[calculate={%
@@ -1081,17 +1084,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation10]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation10]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction11]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction11]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame11]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame11]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 14.74)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy11]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy11]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 14.74)
 \TextField[calculate={%
@@ -1131,17 +1134,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation11]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation11]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=62pt,name=reputationFaction12]{}
+\TextField[maxlen=100,align=0,height=15pt,width=62pt,name=reputationFaction12]{}
 \end{textblock}
 \begin{textblock}{3}(9.91, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationFame12]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationFame12]{}
 \end{textblock}
 \begin{textblock}{3}(11.1, 15.22)
-\TextField[maxlen=100,align=2,height=15pt,width=30pt,name=reputationInfamy12]{}
+\TextField[maxlen=100,align=0,height=15pt,width=30pt,name=reputationInfamy12]{}
 \end{textblock}
 \begin{textblock}{3}(12.25, 15.22)
 \TextField[calculate={%
@@ -1181,10 +1184,17 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=2,height=15pt,width=120pt,name=reputation12]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation12]{}
 \end{textblock}
 
 \end{Form}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                          PAGE 2                                                                             %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
 
 \backgroundsetup{contents={\includegraphics{char_sheet_p2.png}}}
@@ -1197,325 +1207,360 @@ else
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(0.01, 2.27)
-\TextField[maxlen=400,align=2,height=15pt,width=370pt,name=history1]{}
+\TextField[maxlen=400,align=0,height=15pt,width=370pt,name=history1]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.01, 2.81)
-\TextField[maxlen=400,align=2,height=15pt,width=370pt,name=history2]{}
+\TextField[maxlen=400,align=0,height=15pt,width=370pt,name=history2]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.01, 3.34)
-\TextField[maxlen=400,align=2,height=15pt,width=370pt,name=history3]{}
+\TextField[maxlen=400,align=0,height=15pt,width=370pt,name=history3]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.01, 3.88)
-\TextField[maxlen=400,align=2,height=15pt,width=370pt,name=history4]{}
+\TextField[maxlen=400,align=0,height=15pt,width=370pt,name=history4]{}
 \end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           ADDICTIONS
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{textblock}{3}(0.01,4.93)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions1]{}
+\begin{textblock}{3}(0.01,4.91)
+\TextField[maxlen=100,align=0,height=15pt,width=145pt,name=addictions1]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01,5.48)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions2]{}
+\begin{textblock}{3}(0.01,5.44)
+\TextField[maxlen=100,align=0,height=15pt,width=145pt,name=addictions2]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01,6.03)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions3]{}
+\begin{textblock}{3}(0.01,5.96)
+\TextField[maxlen=100,align=0,height=15pt,width=145pt,name=addictions3]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01,6.58)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions4]{}
+\begin{textblock}{3}(0.01,6.53)
+\TextField[maxlen=100,align=0,height=15pt,width=145pt,name=addictions4]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01,7.09)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions5]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01,7.66)
-\TextField[maxlen=100,align=2,height=15pt,width=118pt,name=addictions6]{}
-\end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           TRAITS/PERKS
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{textblock}{3}(3.7,4.93)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks1]{}
+\begin{textblock}{3}(4.4,4.89)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks1]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,5.48)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks2]{}
+\begin{textblock}{3}(4.4,5.41)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks2]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,6.03)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks3]{}
+\begin{textblock}{3}(4.4,5.94)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks3]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,6.58)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks4]{}
+\begin{textblock}{3}(4.4,6.48)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks4]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,7.09)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks5]{}
+\begin{textblock}{3}(4.4,7.02)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks5]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,7.66)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks6]{}
+\begin{textblock}{3}(4.4,7.56)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks6]{}
 \end{textblock}
 
-\begin{textblock}{3}(3.7,6.03)
-\TextField[maxlen=400,align=2,height=15pt,width=223pt,name=traitsperks7]{}
+\begin{textblock}{3}(4.4,8.09)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks7]{}
 \end{textblock}
+
+\begin{textblock}{3}(4.4,8.63)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks8]{}
+\end{textblock}
+
+\begin{textblock}{3}(4.4,9.15)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks9]{}
+\end{textblock}
+
+\begin{textblock}{3}(4.4,9.68)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks10]{}
+\end{textblock}
+
+\begin{textblock}{3}(4.4,10.22)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks11]{}
+\end{textblock}
+
+\begin{textblock}{3}(4.4,10.77)
+\TextField[maxlen=400,align=0,height=15pt,width=210pt,name=traitsperks12]{}
+\end{textblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%          CRAFT RECIPES
+%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{textblock}{3}(0.01, 7.67)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft1]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 8.22)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft2]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 8.74)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft3]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 9.30)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft4]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 9.83)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft5]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 10.39)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft6]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 10.9)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft7]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 11.43)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft8]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 11.96)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft9]{}
+\end{textblock}
+
+\begin{textblock}{3}(0.01, 12.52)
+\TextField[maxlen=400,align=0,height=15pt,width=145pt,name=craft10]{}
+\end{textblock}
+
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           WEAPONS/AMMO
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{textblock}{3}(0.01, 8.8)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons1]{}
+\begin{textblock}{3}(0.01, 13.73)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=weapons1]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01, 9.34)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons2]{}
+\begin{textblock}{3}(0.01, 14.28)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=weapons2]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01, 9.88)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons3]{}
+\begin{textblock}{3}(0.01, 14.8)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=weapons3]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01, 10.41)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons4]{}
+\begin{textblock}{3}(0.01, 15.32)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=weapons4]{}
 \end{textblock}
 
-\begin{textblock}{3}(0.01, 10.93)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons5]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 11.45)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=weapons6]{}
-\end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           ARMOR
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{textblock}{3}(5.2, 8.8)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor1]{}
+\begin{textblock}{3}(5.13, 13.73)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=armor1]{}
 \end{textblock}
 
-\begin{textblock}{3}(5.2, 9.34)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor2]{}
+\begin{textblock}{3}(5.13, 14.28)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=armor2]{}
 \end{textblock}
 
-\begin{textblock}{3}(5.2, 9.88)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor3]{}
+\begin{textblock}{3}(5.13, 14.8)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=armor3]{}
 \end{textblock}
 
-\begin{textblock}{3}(5.2, 10.41)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor4]{}
+\begin{textblock}{3}(5.13, 15.32)
+\TextField[maxlen=400,align=0,height=15pt,width=180pt,name=armor4]{}
 \end{textblock}
 
-\begin{textblock}{3}(5.2, 10.93)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor5]{}
-\end{textblock}
-
-\begin{textblock}{3}(5.2, 11.45)
-\TextField[maxlen=400,align=2,height=15pt,width=180pt,name=armor6]{}
-\end{textblock}
-
-
-%%%%%%%%%%%%%%%%%%%%%%
-%%           SCAVENGE
-%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{textblock}{3}(10.45, 12.54)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge1]{}
-\end{textblock}
-
-\begin{textblock}{3}(10.45, 13.1)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge2]{}
-\end{textblock}
-
-\begin{textblock}{3}(10.45, 13.59)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge3]{}
-\end{textblock}
-
-\begin{textblock}{3}(10.45, 14.16)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge4]{}
-\end{textblock}
-
-\begin{textblock}{3}(10.45, 14.71)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge5]{}
-\end{textblock}
-
-\begin{textblock}{3}(10.45, 15.22)
-\TextField[maxlen=400,align=2,height=15pt,width=200pt,name=scavenge6]{}
-\end{textblock}
-
-
-%%%%%%%%%%%%%%%%%%%%%%
-%%          CRAFT FORMULAS
-%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{textblock}{3}(0.01, 12.54)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft1]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 13.1)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft2]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 13.59)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft3]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 14.16)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft4]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 14.71)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft5]{}
-\end{textblock}
-
-\begin{textblock}{3}(0.01, 15.22)
-\TextField[maxlen=400,align=2,height=15pt,width=270pt,name=craft6]{}
-\end{textblock}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%           INVENTORY
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{textblock}{3}(10.55, 2.28)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt1]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt1]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 2.28)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem1]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem1]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 2.8)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt2]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt2]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 2.8)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem2]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem2]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 3.35)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt3]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt3]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 3.35)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem3]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem3]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 3.89)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt4]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt4]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 3.89)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem4]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem4]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 4.37)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt5]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt5]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 4.37)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem5]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem5]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 4.93)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt6]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt6]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 4.93)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem6]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem6]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 5.46)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt7]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt7]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 5.46)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem7]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem7]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 5.99)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt8]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt8]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 5.99)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem8]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem8]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 6.54)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt9]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt9]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 6.54)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem9]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem9]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 7.09)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt10]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt10]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 7.09)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem10]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem10]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 7.6)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt11]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt11]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 7.6)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem11]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem11]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 8.14)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt12]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt12]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 8.14)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem12]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem12]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 8.68)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt13]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt13]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 8.68)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem13]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem13]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 9.23)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt14]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt14]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 9.23)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem14]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem14]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 9.78)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt15]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt15]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 9.78)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem15]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem15]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 10.3)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt16]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt16]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 10.3)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem16]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem16]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 10.84)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt17]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt17]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 10.84)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem17]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem17]{}
 \end{textblock}
 
 \begin{textblock}{3}(10.55, 11.38)
-\TextField[maxlen=6,align=2,height=15pt,width=21pt,name=invAmt18]{}
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt18]{}
 \end{textblock}
 \begin{textblock}{3}(11.4, 11.38)
-\TextField[maxlen=400,align=2,height=15pt,width=163pt,name=invItem18]{}
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem18]{}
 \end{textblock}
 
+\begin{textblock}{3}(10.55, 11.92)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt19]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 11.92)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem19]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 12.44)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt20]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 12.44)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem20]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 12.98)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt21]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 12.98)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem21]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 13.54)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt22]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 13.54)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem22]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 14.08)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt23]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 14.08)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem23]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 14.61)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt24]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 14.61)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem24]{}
+\end{textblock}
+
+\begin{textblock}{3}(10.55, 15.15)
+\TextField[maxlen=6,align=0,height=15pt,width=21pt,name=invAmt25]{}
+\end{textblock}
+\begin{textblock}{3}(11.4, 15.15)
+\TextField[maxlen=400,align=0,height=15pt,width=163pt,name=invItem25]{}
+\end{textblock}
 
 \end{Form}
 
