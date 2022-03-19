@@ -373,7 +373,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagBarter");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus +  f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalBarter,readonly=true]{}
 \end{textblock}
 
@@ -390,7 +392,9 @@
     var f_bSkill = this.getField("BonusPer");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagEnergy");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus +  f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalEnergy,readonly=true]{}
 \end{textblock}
 
@@ -407,7 +411,9 @@
     var f_bSkill = this.getField("BonusPer");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagExplosives");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalExplosives,readonly=true]{}
 \end{textblock}
 
@@ -424,7 +430,9 @@
     var f_bSkill = this.getField("BonusAgi");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagGuns");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalGuns,readonly=true]{}
 \end{textblock}
 
@@ -441,7 +449,9 @@
     var f_bSkill = this.getField("BonusPer");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagLockpick");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalLockpick,readonly=true]{}
 \end{textblock}
 
@@ -458,7 +468,9 @@
     var f_bSkill = this.getField("BonusInt");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagMedicine");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalMedicine,readonly=true]{}
 \end{textblock}
 
@@ -475,7 +487,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagMelee");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalMelee,readonly=true]{}
 \end{textblock}
 
@@ -492,7 +506,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagRepair");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalRepair,readonly=true]{}
 \end{textblock}
 
@@ -509,7 +525,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagScience");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalScience,readonly=true]{}
 \end{textblock}
 
@@ -526,7 +544,9 @@
     var f_bSkill = this.getField("BonusAgi");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagSneak");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalSneak,readonly=true]{}
 \end{textblock}
 
@@ -543,7 +563,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagSpeech");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalSpeech,readonly=true]{}
 \end{textblock}
 
@@ -560,7 +582,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagSurvival");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalSurvival,readonly=true]{}
 \end{textblock}
 
@@ -577,7 +601,9 @@
     var f_bSkill = this.getField("BonusCha");
     var f_Luck = this.getField("Luc");
     var f_bLuck = this.getField("BonusLuc");
-    event.value = f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
+    var f_tagged = this.getField("tagUnarmed");
+    var tagged_bonus = f_tagged.value == "Yes"? 15 : 0;
+    event.value = tagged_bonus + f_base.value + 2 + (2 * (f_Skill.value + f_bSkill.value)) + Math.ceil((f_Luck.value + f_bLuck.value) / 2);
   },maxlen=3,align=0,height=15pt,width=35pt,name=finalUnarmed,readonly=true]{}
 \end{textblock}
 
@@ -632,7 +658,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation1]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation1,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 13.33)
@@ -682,7 +708,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation2]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation2,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 13.8)
@@ -732,7 +758,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation3]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation3,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 14.28)
@@ -782,7 +808,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation4]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation4,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 14.74)
@@ -832,7 +858,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation5]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation5,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(0.14, 15.22)
@@ -882,7 +908,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=125pt,name=reputation6]{}
+},maxlen=100,align=0,height=15pt,width=125pt,name=reputation6,readonly=true]{}
 \end{textblock}
 
 %%%     COLUMN 2
@@ -934,7 +960,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation7]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation7,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 13.33)
@@ -984,7 +1010,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation8]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation8,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 13.8)
@@ -1034,7 +1060,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation9]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation9,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 14.28)
@@ -1084,7 +1110,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation10]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation10,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 14.74)
@@ -1134,7 +1160,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation11]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation11,readonly=true]{}
 \end{textblock}
 
 \begin{textblock}{3}(8, 15.22)
@@ -1184,7 +1210,7 @@ else if (f_fame.value == 4 && f_infamy.value == 4)
 	event.value = "Wild Child";
 else
 	event.value = "";
-},maxlen=100,align=0,height=15pt,width=120pt,name=reputation12]{}
+},maxlen=100,align=0,height=15pt,width=120pt,name=reputation12,readonly=true]{}
 \end{textblock}
 
 \end{Form}
